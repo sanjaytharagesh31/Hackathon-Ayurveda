@@ -1,9 +1,9 @@
 from flask import Flask
+from flask_compress import Compress
 from flask import render_template
-from flask import request
-from flask import flash
 
 app = Flask(__name__)
+Compress(app)
 
 @app.route('/',methods=['POST','GET'])
 def master():
