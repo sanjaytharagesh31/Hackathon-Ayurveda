@@ -125,7 +125,7 @@
 				<!--Author:-->
 				<input type="text" placeholder="Select the Author" disabled />
 				<span>
-					<select id="six" onchange="show()"> </select>
+					<select id="six" onchange="show(); placeInput(); placeOutput()"> </select>
 				</span>      
 			</div>
 
@@ -161,14 +161,27 @@
 	
 	function placeInput() {
 		if (v.value=="weight") {
-			y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
-			
-			
+			if(a.value=="1") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="2") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="3") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="4") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="5") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="6") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
 		}
 		if (v.value=="length") {
 			y.innerHTML="<option value=\"1\">Yavodara</option><option value=\"2\">Angula</option><option value=\"3\">Vitasti</option><option value=\"4\">Aratni</option><option value=\"5\">Hasta</option><option value=\"6\">Nrpahasta/Rajahasta</option><option value=\"7\">Vyama</option>"
-			
-			
 		}
 		if (v.value=="time") {
 			y.innerHTML="<option value=\"1\">Ksanas</option><option value=\"2\">Lava</option><option value=\"3\">Nimesa</option><option value=\"4\">Kastha</option><option value=\"5\">Ghatis</option><option value=\"6\">Kala</option><option value=\"7\">Muhurta</option><option value=\"8\">Ahoratra</option><option value=\"9\">Paksa</option><option value=\"10\">Masa</option><option value=\"11\">Rtu</option><option value=\"12\">Ayana</option><option value=\"13\">Samvatsara</option><option value=\"14\">yuga</option>"
