@@ -100,25 +100,22 @@
 		</style>
 
 	</head>
-	<body>
+	<body onload="loadFirst()">
 		<h1>Ayurvedic measurement<br>Conversions</h1>
 		<div class="main">
 			<div class="selectCategory">
 				<!--Enter Category:-->
 				<span>
-					<select onchange="placeInput();placeOutput()" id="five">
-						<option value="weight">Weight</option>
-						<option value="length">Length</option>
-						<option value="time">Time</option>
+					<select onchange="placeInput(); placeOutput()" id="five">
 					</select>
 				</span>
 			</div>
 			<div class="from">
-				<input type="text" placeholder="Enter a number" id="one" />
+				<input type="text" placeholder="Enter a number" onkeyup="show()" id="one" />
 				<!--Unit:-->
 				<span>
-					<select id="three"> </select>
-				</span>
+					<select id="three" onchange="show()"> </select>
+				</span>      
 			</div>
 
 			<div class="to">
@@ -213,6 +210,14 @@
 			if (z.value=="6")
 				x.value = w.value*factor[2][(y.value)-1]/31104000;
 		}
+	}
+
+	function loadFirst() {
+		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"length\">Length</option><option value=\"time\">Time</option>";
+		y.innerHTML = "<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>";
+		z.innerHTML = "<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>";
+		w.value = "";
+		x.value = "";
 	}
 	
 </script>
