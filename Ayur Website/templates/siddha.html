@@ -1,8 +1,7 @@
 <html>
 	<head>
+		<title>Siddha | Conversion</title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-		<title>Ayurveda | Conversion</title>
-		<link rel="shortcut icon" href="favicon.png" type="image/png">
 		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
 		<style>
 			body {
@@ -19,7 +18,7 @@
 				margin: 0;
 			}
 			.nav li {
-				font-family: sans-serif;
+				font-family: Raleway;
 				font-size: 1.2em;
 				line-height: 40px;
 				height: 40px;
@@ -204,16 +203,16 @@
 				<div class="nav">
 					<ul>
 					<li class="side-nav-bar"> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> </li> 
-					<li class="ayurveda"><a href="#">Ayurveda</a></li>
-					<li class="unani"><a href="#">Unani</a></li>
-					<li class="siddha"><a href="#">Siddha</a></li>
+					<li class="ayurveda"><a href="{{url_for('master')}}">Ayurveda</a></li>
+					<li class="unani"><a href="{{url_for('unani')}}">Unani</a></li>
+					<li class="siddha"><a href="{{url_for('siddha')}}">Siddha</a></li>
 					</ul>
 				</div>
 			</header>
 			<div id="mySidenav" class="sidenav">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-				<a href="#">Home</a>
-				<a href="#" target="_blank">Blog</a>
+				<a href="{{url_for('master')}}">Home</a>
+				<a href="https://siddharthsham.github.io/doggowalk/" target="_blank">Blog</a>
 				<a href="#" target="_blank">Videos</a>
 				<a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
 				<a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
@@ -422,5 +421,13 @@
 		w.value = "";
 		x.value = "";
 	}
+
+	function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 	
 </script>
