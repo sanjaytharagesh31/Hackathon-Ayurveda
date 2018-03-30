@@ -1,2 +1,1 @@
-TOKEN = 'telegram_token'
-APP_ID = 'your app_id'
+TOKEN = '594864550:AAFeNXYHNew-EMHpRfYG5fU50wOUE12tFYw'

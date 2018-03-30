@@ -8,10 +8,9 @@ def convert(unit, input):
         "nrpahasta": input*55.88,
         "rajahasta": input*55.88,
         "vyama": input*182.88,
-        //end of length units
+        #end of length units
         "karsa": input*12,
         "tola": input*12,
-        "masa": input,
         "ratti": input*125,
         "gunga": input*125,
         "palam": input*48,
@@ -27,6 +26,19 @@ def convert(unit, input):
         "khari": input*196608,
         "tula": input*4800,
         "bhara": input*96,
-        //end of weight units
+        #end of weight units
+        "kastha": input*4.66,
+        "ghati": input*24*60,
+        "kala": input*140,
+        "muhurta": input*48*60,
+        "ahoratra": input*24*3600,
+        "paksa": input*15*24*3600,
+        "masa": input*30*24*3600,
+        "rtu": input*60*24*3600,
+        "ayana": input*182*24*3600,
+        "samvatsara": input*365*24*3600,
+        "yuga":input*5*365*24*3600
+        #end of time units, converts to seconds
     }
-    switcher.get(unit, "Unknown unit");
+
+    return str(switcher.get(unit, "This applet is still under construction, please visit later for a fully functional version!"))
