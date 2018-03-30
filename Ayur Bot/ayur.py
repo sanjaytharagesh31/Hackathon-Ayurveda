@@ -28,5 +28,17 @@ def convert(unit, input):
         "tula": input*4800,
         "bhara": input*96,
         #end of weight units
+        "kastha": input*4.66,
+        "ghati": input*24*60,
+        "kala": input*140,
+        "muhurta": input*48*60,
+        "ahoratra": input*24*3600,
+        "paksa": input*15*24*3600,
+        "masa": input*30*24*3600,
+        "rtu": input*60*24*3600,
+        "ayana": input*182*24*3600,
+        "samvatsara": input*365*24*3600,
+        "yuga":input*5*365*24*3600,
+        #end of time units
     }
     switcher.get(unit, "Unknown unit");
