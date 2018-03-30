@@ -8,7 +8,7 @@ def convert(unit, input):
         "nrpahasta": input*55.88,
         "rajahasta": input*55.88,
         "vyama": input*182.88,
-        //end of length units
+        #end of length units
         "karsa": input*12,
         "tola": input*12,
         "masa": input,
@@ -27,7 +27,7 @@ def convert(unit, input):
         "khari": input*196608,
         "tula": input*4800,
         "bhara": input*96,
-        //end of weight units
+        #end of weight units
         "kastha": input*4.66,
         "ghati": input*24*60,
         "kala": input*140,
@@ -39,6 +39,6 @@ def convert(unit, input):
         "ayana": input*182*24*3600,
         "samvatsara": input*365*24*3600,
         "yuga":input*5*365*24*3600,
-        //end of time units
+        #end of time units
     }
     switcher.get(unit, "Unknown unit");
