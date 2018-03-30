@@ -179,7 +179,7 @@
 			z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option><option value=\"3\">Yavodara</option><option value=\"4\">Angula</option><option value=\"5\">Vitasti</option><option value=\"6\">Aratni</option><option value=\"7\">Hasta</option><option value=\"8\">Nrpahasta/Rajahasta</option><option value=\"9\">Vyama</option>"
 		}
 		if(v.value=="time") {
-		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option>"
+		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option><option value=\"7\">Ksanas</option><option value=\"8\">Lava</option><option value=\"9\">Nimesa</option><option value=\"10\">Kastha</option><option value=\"11\">Ghatis</option><option value=\"12\">Kala</option><option value=\"13\">Muhurta</option><option value=\"14\">Ahoratra</option><option value=\"15\">Paksa</option><option value=\"16\">Masa</option><option value=\"17\">Rtu</option><option value=\"18\">Ayana</option><option value=\"19\">Samvatsara</option><option value=\"20\">yuga</option>"
 		}
 		x.value = ""; //to empty the output box
 	}
@@ -226,6 +226,34 @@
 				x.value = w.value*factor[2][(y.value)-1]/2592000;
 			if (z.value=="6")
 				x.value = w.value*factor[2][(y.value)-1]/31104000;
+			if (z.value=="7")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="8")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="9")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="10")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="11")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="12")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="13")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="14")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="15")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="16")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="17")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="18")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="19")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="20")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
 		}
 	}
 
