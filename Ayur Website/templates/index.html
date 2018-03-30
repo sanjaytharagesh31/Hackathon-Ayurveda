@@ -1,18 +1,117 @@
 <html>
 	<head>
+		
 		<title>Ayurveda | Conversion</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 		<link rel="shortcut icon" href="favicon.png" type="image/png">
 		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
 		<style>
 			body {
-				padding-top: 20px;
-				background-color: #202020;
+				padding: 0%;
+				margin: 0%;
+				background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+			}
+			
+			.nav ul {
+				list-style: none;
+				background-color: #444;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+			}
+			.nav li {
+				font-family: sans-serif;
+				font-size: 1.2em;
+				line-height: 40px;
+				height: 40px;
+				border-bottom: 1px solid #888;
+			}
+ 
+			.nav a {
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				transition: .3s background-color;
+			}
+ 
+			.nav a:hover {
+				background-color: #005f5f;
+			}
+
+			.nav li {
+				width: 120px;
+				border-bottom: none;
+				height: 50px;
+				line-height: 50px;
+				font-size: 1.4em;
+			}
+
+			/* Option 1 - Display Inline */
+			.nav li {
+				display: inline-block;
+				margin-right: -4px;
+			}
+
+			/* Options 2 - Float
+			.nav li {
+			float: left;
+			}
+			.nav ul {
+			overflow: auto;
+			width: 600px;
+			margin: 0 auto;
+			}
+			.nav {
+			background-color: #444;
+			}
+			*/
+			.side-nav-bar {
+				float: left;
+			}
+			.sidenav {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #111;
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+
+			.sidenav a:hover {
+				color: #f1f1f1;
+			}
+
+			.sidenav .closebtn {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+			}
+
+			@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
 			}
 
 			h1 {
 				text-align: center;
 				color: #E5E5E5;
-				font-family: 'Poppins', sans-serif;
+				font-family: 'Raleway', sans-serif;
+				font-size: 48px;
 				font-weight: 700;
 			}
 
@@ -85,7 +184,7 @@
 			.from, .to {
 				margin-top: 10px;
 				box-sizing: border-box;
-				width: 45%;
+				width: 30%;
 			}
 
 			.from {
@@ -100,25 +199,51 @@
 		</style>
 
 	</head>
-	<body>
+	<body onload="loadFirst()">
+		<header>
+			<div class="nav">
+				<ul>
+				<li class="side-nav-bar"> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> </li> 
+				<li class="ayurveda"><a href="/Ayur Website/templates/index.html">Ayurveda</a></li>
+				<li class="unani"><a href="/Ayur Website/templates/unani.html">Unani</a></li>
+				<li class="siddha"><a href="/Ayur Website/templates/siddha.html">Siddha</a></li>
+				</ul>
+			</div>
+		</header>
+		<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="#">Home</a>
+				<a href="#" target="_blank">Blog</a>
+				<a href="#" target="_blank">Videos</a>
+				<a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
+				<a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
+				<a href="#" target="_blank">Android-App</a>
+			  </div>
+			  
+			  
 		<h1>Ayurvedic measurement<br>Conversions</h1>
 		<div class="main">
 			<div class="selectCategory">
 				<!--Enter Category:-->
 				<span>
-					<select onchange="placeInput();placeOutput()" id="five">
-						<option value="weight">Weight</option>
-						<option value="length">Length</option>
-						<option value="time">Time</option>
+					<select onchange="placeInput(); placeOutput(); placeAuthor()" id="five">
 					</select>
 				</span>
 			</div>
 			<div class="from">
-				<input type="text" placeholder="Enter a number" id="one" />
+				<input type="text" placeholder="Enter a number" onkeyup="show()" id="one" />
 				<!--Unit:-->
 				<span>
-					<select id="three"> </select>
-				</span>
+					<select id="three" onchange="show()"> </select>
+				</span>      
+			</div>
+			
+			<div class="from" style="margin-left: 35px">
+				<!--Author:-->
+				<input type="text" placeholder="Select the Author" disabled />
+				<span>
+					<select id="six" onchange="show(); placeInput(); placeOutput()"> </select>
+				</span>      
 			</div>
 
 			<div class="to">
@@ -134,6 +259,7 @@
 </html>
 
 <script>
+	var a= document.getElementById("six");
 	var v= document.getElementById("five");
 	var w= document.getElementById("one");
 	var x= document.getElementById("two");
@@ -152,14 +278,27 @@
 	
 	function placeInput() {
 		if (v.value=="weight") {
-			y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
-			
-			
+			if(a.value=="1") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="2") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="3") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="4") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="5") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="6") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
 		}
 		if (v.value=="length") {
 			y.innerHTML="<option value=\"1\">Yavodara</option><option value=\"2\">Angula</option><option value=\"3\">Vitasti</option><option value=\"4\">Aratni</option><option value=\"5\">Hasta</option><option value=\"6\">Nrpahasta/Rajahasta</option><option value=\"7\">Vyama</option>"
-			
-			
 		}
 		if (v.value=="time") {
 			y.innerHTML="<option value=\"1\">Ksanas</option><option value=\"2\">Lava</option><option value=\"3\">Nimesa</option><option value=\"4\">Kastha</option><option value=\"5\">Ghatis</option><option value=\"6\">Kala</option><option value=\"7\">Muhurta</option><option value=\"8\">Ahoratra</option><option value=\"9\">Paksa</option><option value=\"10\">Masa</option><option value=\"11\">Rtu</option><option value=\"12\">Ayana</option><option value=\"13\">Samvatsara</option><option value=\"14\">yuga</option>"
@@ -171,15 +310,30 @@
 		w.value = ""; //to empty the input box
 	}
 	
+	function placeAuthor() {
+		if(v.value=="weight") {
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
+		}
+
+		if(v.value=="length") {
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option>"
+		}
+		if(v.value=="time") {
+			a.innerHTML = "<option value=\"1\">API</option>"
+		}
+
+		show();
+	}
+
 	function placeOutput() {
 		if (v.value=="weight") {
 			z.innerHTML="<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>"
 		}
 		if (v.value=="length") {
-			z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option>"
+			z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option><option value=\"3\">Yavodara</option><option value=\"4\">Angula</option><option value=\"5\">Vitasti</option><option value=\"6\">Aratni</option><option value=\"7\">Hasta</option><option value=\"8\">Nrpahasta/Rajahasta</option><option value=\"9\">Vyama</option>"
 		}
 		if(v.value=="time") {
-		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option>"
+		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option><option value=\"7\">Ksanas</option><option value=\"8\">Lava</option><option value=\"9\">Nimesa</option><option value=\"10\">Kastha</option><option value=\"11\">Ghatis</option><option value=\"12\">Kala</option><option value=\"13\">Muhurta</option><option value=\"14\">Ahoratra</option><option value=\"15\">Paksa</option><option value=\"16\">Masa</option><option value=\"17\">Rtu</option><option value=\"18\">Ayana</option><option value=\"19\">Samvatsara</option><option value=\"20\">yuga</option>"
 		}
 		x.value = ""; //to empty the output box
 	}
@@ -194,9 +348,23 @@
 		
 		if (v.value=="length") {
 			if (z.value=="1")
-				x.value = w.value*factor[1][(y.value)-1]*0.393701;
+				x.value = w.value*factor[1][(y.value)-1]*0.393701; //convert to inch
 			if (z.value=="2")
-				x.value = w.value*factor[1][(y.value)-1];   //convert to inch
+				x.value = w.value*factor[1][(y.value)-1];
+			if (z.value=="3")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="4")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="5")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="6")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="7")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="8")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="9")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
 		}
 		
 		if (v.value=="time") {
@@ -212,7 +380,52 @@
 				x.value = w.value*factor[2][(y.value)-1]/2592000;
 			if (z.value=="6")
 				x.value = w.value*factor[2][(y.value)-1]/31104000;
+			if (z.value=="7")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="8")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="9")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="10")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="11")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="12")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="13")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="14")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="15")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="16")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="17")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="18")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="19")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="20")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
 		}
 	}
+
+	function loadFirst() {
+		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"length\">Length</option><option value=\"time\">Time</option>";
+		a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
+		y.innerHTML = "<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>";
+		z.innerHTML = "<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>";
+		w.value = "";
+		x.value = "";
+	}
+
+	function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 	
 </script>

@@ -1,8 +1,3 @@
-# Hackathon-Ayurveda
-
-An conversion scale which converts ancient ayurvedic measurements to modern measurements.
-
-
 # Dependencies:
 1) Install python 3.x and pip.
 2) Install Flask and Flask-compress.
