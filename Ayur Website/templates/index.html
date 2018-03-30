@@ -88,7 +88,7 @@
 			.from, .to {
 				margin-top: 10px;
 				box-sizing: border-box;
-				width: 45%;
+				width: 30%;
 			}
 
 			.from {
@@ -109,7 +109,7 @@
 			<div class="selectCategory">
 				<!--Enter Category:-->
 				<span>
-					<select onchange="placeInput(); placeOutput()" id="five">
+					<select onchange="placeInput(); placeOutput(); placeAuthor()" id="five">
 					</select>
 				</span>
 			</div>
@@ -118,6 +118,14 @@
 				<!--Unit:-->
 				<span>
 					<select id="three" onchange="show()"> </select>
+				</span>      
+			</div>
+			
+			<div class="from" style="margin-left: 35px">
+				<!--Author:-->
+				<input type="text" placeholder="Select the Author" disabled />
+				<span>
+					<select id="six" onchange="show()"> </select>
 				</span>      
 			</div>
 
@@ -134,6 +142,7 @@
 </html>
 
 <script>
+	var a= document.getElementById("six");
 	var v= document.getElementById("five");
 	var w= document.getElementById("one");
 	var x= document.getElementById("two");
@@ -171,6 +180,21 @@
 		w.value = ""; //to empty the input box
 	}
 	
+	function placeAuthor() {
+		if(v.value=="weight") {
+			a.innerHTML = "<option value=\"1\">Charaka</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">API</option>";
+		}
+
+		if(v.value=="length") {
+			a.innerHTML = "<option value=\"1\">Sushruta</option><option value=\"2\">API</option>"
+		}
+		if(v.value=="time") {
+			a.innerHTML = "<option value=\"1\">API</option>"
+		}
+
+		show();
+	}
+
 	function placeOutput() {
 		if (v.value=="weight") {
 			z.innerHTML="<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>"
@@ -259,6 +283,7 @@
 
 	function loadFirst() {
 		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"length\">Length</option><option value=\"time\">Time</option>";
+		a.innerHTML = "<option value=\"1\">Charaka</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">API</option>";
 		y.innerHTML = "<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>";
 		z.innerHTML = "<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>";
 		w.value = "";
