@@ -176,7 +176,7 @@
 			z.innerHTML="<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>"
 		}
 		if (v.value=="length") {
-			z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option>"
+			z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option><option value=\"3\">Yavodara</option><option value=\"4\">Angula</option><option value=\"5\">Vitasti</option><option value=\"6\">Aratni</option><option value=\"7\">Hasta</option><option value=\"8\">Nrpahasta/Rajahasta</option><option value=\"9\">Vyama</option>"
 		}
 		if(v.value=="time") {
 		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option>"
@@ -194,9 +194,23 @@
 		
 		if (v.value=="length") {
 			if (z.value=="1")
-				x.value = w.value*factor[1][(y.value)-1]*0.393701;
+				x.value = w.value*factor[1][(y.value)-1]*0.393701; //convert to inch
 			if (z.value=="2")
-				x.value = w.value*factor[1][(y.value)-1];   //convert to inch
+				x.value = w.value*factor[1][(y.value)-1];
+			if (z.value=="3")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="4")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="5")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="6")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="7")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="8")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="9")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
 		}
 		
 		if (v.value=="time") {
