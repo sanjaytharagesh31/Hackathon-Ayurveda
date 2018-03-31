@@ -1,0 +1,130 @@
+<html>
+	<head>
+		
+		<title>Ayurveda | Conversion</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+		<link rel="shortcut icon" href="favicon.png" type="image/png">
+		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
+		<style>
+
+			body {
+				padding: 0%;
+				margin: 0%;
+				background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+			}
+			.nav {
+                height: fit-content;
+            }
+			.nav ul {
+				list-style: none;
+				background-color: #444;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+			}
+	 
+    		.nav li {
+				width: 120px;
+				border-bottom: none;
+				height: 50px;
+				line-height: 50px;
+			}
+
+			/* Options 2 - Float
+			.nav li {
+			float: left;
+			}
+			.nav ul {
+			overflow: auto;
+			width: 600px;
+			margin: 0 auto;
+			}
+			.nav {
+			background-color: #444;
+			}
+			*/
+			.side-nav-bar {
+				float: left;
+			}
+			.sidenav {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #111;
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+
+			.sidenav a:hover {
+				color: #f1f1f1;
+			}
+
+			.sidenav .closebtn {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+			}
+            
+            .video-container  {
+                margin: 0 auto;
+                padding-top: 10%;
+                padding-left: 25%;
+            }
+
+			@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
+			}
+
+		</style>
+
+	</head>
+	<body>
+		<header>
+			<div class="nav">
+				<ul>
+				<li class="side-nav-bar"> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> </li> 
+				</ul>
+			</div>
+		</header>
+		<div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{url_for('master')}}">Home</a>
+            <a href="https://siddharthsham.github.io/doggowalk/" target="_blank">Blog</a>
+            <a href="{{url_for('master')}}" target="_blank">Videos</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
+            <a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
+            <a href="#" target="_blank">Android-App</a>
+        </div>
+        <div class="video-container">
+        ​   <iframe width="65%" height="60%" src="https://www.youtube.com/embed/videoseries?list=PLsw3YEtLCk0fwn_k94H-zFtCmjYGOK9Pc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </body>
+</html>
+
+<script>
+
+	function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+	
+</script>

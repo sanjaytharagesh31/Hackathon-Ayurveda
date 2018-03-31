@@ -17,5 +17,9 @@ def siddha():
 def unani():
     return render_template('unani.html')
 
+@app.route('/videos',methods=['POST','GET'])
+def videos():
+    return render_template('video.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
