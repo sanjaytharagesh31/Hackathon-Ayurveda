@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@android:dimen/dialog_min_width_minor"
+    android:background="@android:color/holo_blue_light"
+    tools:context="ericjoseph.com.firebasework.ViewUploads"
+    tools:padding="@dimen/fab_margin">
+
+    <ListView
+        android:id="@+id/listView"
+        style="@style/Widget.AppCompat.Light.ListView.DropDown"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:footerDividersEnabled="true"
+        android:headerDividersEnabled="true"
+        android:minHeight="203dp"
+        android:scrollbars="horizontal|vertical" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:text="Select Type to Display" />
+
+    <RadioGroup
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_above="@+id/listView"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/button2">
+
+        <RadioButton
+            android:id="@+id/pdfradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PDF"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+        <RadioButton
+            android:id="@+id/mp4radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Video"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+        <RadioButton
+            android:id="@+id/txtradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Text"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+        <RadioButton
+            android:id="@+id/audioradio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Audio"
+            android:textColor="@color/common_google_signin_btn_text_dark_default" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listView"
+        android:layout_alignStart="@+id/button2"
+        android:text="FILE LIST"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

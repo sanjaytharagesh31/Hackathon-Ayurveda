@@ -8,6 +8,14 @@ from telegram.ext import BaseFilter
 from telegram.ext import CommandHandler, Filters, MessageHandler, Updater
 from telegram.error import TelegramError
 
+"""
+NOTE:
+For a live demo
+Talk to @exalt_bot on Telegram
+AKA Exaltor
+
+"""
+
 class integery(BaseFilter):
     def filter(self, message):
         string = message.text

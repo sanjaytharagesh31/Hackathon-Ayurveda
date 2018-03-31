@@ -1,0 +1,1 @@
+Use Android Studio to navigate to this folder to use Application.

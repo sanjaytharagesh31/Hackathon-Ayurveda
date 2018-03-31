@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="ericjoseph.com.firebasework.StartPage">
+
+    <ImageView
+        android:id="@+id/Ayurselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView11"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="13dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClick"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/unaniselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView15"
+        android:layout_alignTop="@+id/Ayurselect"
+        android:layout_marginStart="30dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClick"
+        app:srcCompat="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="EXALT-AUS HUB"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Ayurselect"
+        android:layout_below="@+id/Ayurselect"
+        android:layout_marginTop="11dp"
+        android:text="Unit Converter"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/textView18"
+        android:text="Upload Resource"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <ImageView
+        android:id="@+id/siddhaselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_below="@+id/unaniselect"
+        android:layout_marginTop="43dp"
+        android:onClick="onClick"
+        app:srcCompat="@android:color/holo_orange_dark" />
+
+    <ImageView
+        android:id="@+id/org_upload"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/textView14"
+        android:layout_alignStart="@+id/unaniselect"
+        android:onClick="onClick"
+        app:srcCompat="@android:color/holo_blue_dark" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/siddhaselect"
+        android:layout_below="@+id/siddhaselect"
+        android:layout_marginTop="12dp"
+        android:text="View Resources"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView14"
+        android:layout_alignBottom="@+id/textView14"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:text="Register Organization"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <ImageView
+        android:id="@+id/org_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_below="@+id/textView14"
+        android:layout_marginTop="14dp"
+        android:onClick="onClick"
+        app:srcCompat="@android:color/holo_orange_light" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/org_view"
+        android:layout_marginEnd="26dp"
+        android:layout_marginTop="11dp"
+        android:layout_toStartOf="@+id/textView15"
+        android:text="View Organization"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+</RelativeLayout>
