@@ -11,7 +11,6 @@ def convert(unit, input):
         #end of length units
         "karsa": input*12,
         "tola": input*12,
-        "masa": input,
         "ratti": input*125,
         "gunga": input*125,
         "palam": input*48,
@@ -38,7 +37,8 @@ def convert(unit, input):
         "rtu": input*60*24*3600,
         "ayana": input*182*24*3600,
         "samvatsara": input*365*24*3600,
-        "yuga":input*5*365*24*3600,
-        #end of time units
+        "yuga":input*5*365*24*3600
+        #end of time units, converts to seconds
     }
-    switcher.get(unit, "Unknown unit");
+
+    return str(switcher.get(unit, "This applet is still under construction, please visit later for a fully functional version!"))

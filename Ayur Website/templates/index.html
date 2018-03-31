@@ -7,8 +7,104 @@
 		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
 		<style>
 			body {
-				padding-top: 10%;
+				padding: 0%;
+				margin: 0%;
 				background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+			}
+			
+			.nav ul {
+				list-style: none;
+				background-color: #444;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+			}
+			.nav li {
+				font-family: Raleway;
+				font-size: 1.2em;
+				line-height: 40px;
+				height: 40px;
+				border-bottom: 1px solid #888;
+			}
+ 
+			.nav a {
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				transition: .3s background-color;
+			}
+ 
+			.nav a:hover {
+				background-color: #005f5f;
+			}
+
+			.nav li {
+				width: 120px;
+				border-bottom: none;
+				height: 50px;
+				line-height: 50px;
+				font-size: 1.4em;
+			}
+
+			/* Option 1 - Display Inline */
+			.nav li {
+				display: inline-block;
+				margin-right: -4px;
+			}
+
+			/* Options 2 - Float
+			.nav li {
+			float: left;
+			}
+			.nav ul {
+			overflow: auto;
+			width: 600px;
+			margin: 0 auto;
+			}
+			.nav {
+			background-color: #444;
+			}
+			*/
+			.side-nav-bar {
+				float: left;
+			}
+			.sidenav {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #111;
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+
+			.sidenav a:hover {
+				color: #f1f1f1;
+			}
+
+			.sidenav .closebtn {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+				margin-left: 50px;
+			}
+
+			@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
 			}
 
 			h1 {
@@ -104,7 +200,28 @@
 
 	</head>
 	<body onload="loadFirst()">
-		<h1>Ayurvedic measurement<br>Conversions</h1>
+		<header>
+			<div class="nav">
+				<ul>
+				<li class="side-nav-bar"> <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> </li> 
+				<li class="ayurveda"><a href="{{url_for('master')}}">Ayurveda</a></li>
+				<li class="unani"><a href="{{url_for('unani')}}">Unani</a></li>
+				<li class="siddha"><a href="{{url_for('siddha')}}">Siddha</a></li>
+				</ul>
+			</div>
+		</header>
+		<div id="mySidenav" class="sidenav">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<a href="{{url_for('master')}}">Home</a>
+				<a href="https://siddharthsham.github.io/doggowalk/" target="_blank">Blog</a>
+				<a href="{{url_for('videos')}}" target="_blank">Videos</a>
+				<a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
+				<a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
+				<a href="#" target="_blank">Android-App</a>
+			  </div>
+			  
+			  
+		<h1>Ayurvedic measurement<br>Converter</h1>
 		<div class="main">
 			<div class="selectCategory">
 				<!--Enter Category:-->
@@ -125,7 +242,7 @@
 				<!--Author:-->
 				<input type="text" placeholder="Select the Author" disabled />
 				<span>
-					<select id="six" onchange="show()"> </select>
+					<select id="six" onchange="show(); placeInput(); placeOutput()"> </select>
 				</span>      
 			</div>
 
@@ -161,14 +278,27 @@
 	
 	function placeInput() {
 		if (v.value=="weight") {
-			y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
-			
-			
+			if(a.value=="1") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="2") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="3") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="4") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="5") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
+			if(a.value=="6") {
+				y.innerHTML="<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>"
+			}
 		}
 		if (v.value=="length") {
 			y.innerHTML="<option value=\"1\">Yavodara</option><option value=\"2\">Angula</option><option value=\"3\">Vitasti</option><option value=\"4\">Aratni</option><option value=\"5\">Hasta</option><option value=\"6\">Nrpahasta/Rajahasta</option><option value=\"7\">Vyama</option>"
-			
-			
 		}
 		if (v.value=="time") {
 			y.innerHTML="<option value=\"1\">Ksanas</option><option value=\"2\">Lava</option><option value=\"3\">Nimesa</option><option value=\"4\">Kastha</option><option value=\"5\">Ghatis</option><option value=\"6\">Kala</option><option value=\"7\">Muhurta</option><option value=\"8\">Ahoratra</option><option value=\"9\">Paksa</option><option value=\"10\">Masa</option><option value=\"11\">Rtu</option><option value=\"12\">Ayana</option><option value=\"13\">Samvatsara</option><option value=\"14\">yuga</option>"
@@ -182,11 +312,11 @@
 	
 	function placeAuthor() {
 		if(v.value=="weight") {
-			a.innerHTML = "<option value=\"1\">Charaka</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">API</option>";
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
 		}
 
 		if(v.value=="length") {
-			a.innerHTML = "<option value=\"1\">Sushruta</option><option value=\"2\">API</option>"
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option>"
 		}
 		if(v.value=="time") {
 			a.innerHTML = "<option value=\"1\">API</option>"
@@ -283,11 +413,19 @@
 
 	function loadFirst() {
 		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"length\">Length</option><option value=\"time\">Time</option>";
-		a.innerHTML = "<option value=\"1\">Charaka</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">API</option>";
+		a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
 		y.innerHTML = "<option value=\"1\">Ratti/Gunja</option><option value=\"2\">Masa</option><option value=\"3\">Karsa/Tola</option><option value=\"4\">Sukti</option><option value=\"5\">Palam</option><option value=\"6\">Prasrti</option><option value=\"7\">Kudava</option><option value=\"8\">Manika</option><option value=\"9\">Prastha</option><option value=\"10\">Adhaka</option><option value=\"11\">Drona</option><option value=\"12\">Surpa</option><option value=\"13\">Droni/Vahi</option><option value=\"14\">Khari</option><option value=\"15\">Tula</option><option value=\"16\">Bhara</option>";
 		z.innerHTML = "<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>";
 		w.value = "";
 		x.value = "";
 	}
+
+	function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 	
 </script>
