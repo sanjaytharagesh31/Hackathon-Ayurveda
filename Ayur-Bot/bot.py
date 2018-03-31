@@ -92,33 +92,13 @@ def initial(bot, update):
     unit = update.message.text
     bot.send_message(chat_id=update.message.chat_id, text="Enter the Ayurvedic value: ")
 
-"""
-def lengther(bot, update):    
-    if converted == " metre":
-        keyboard = build_keyboard(modern_length)
-        bot.send_message(chat_id=update.message.chat_id, 
-                         text="Select the unit you wish to convert to: ",
-                         reply_markup=keyboard)
-
-def weighter(bot, update):    
-    if converted == " metre":
-        keyboard = build_keyboard(modern_weight)
-        bot.send_message(chat_id=update.message.chat_id, 
-                         text="Select the unit you wish to convert to: ",
-                         reply_markup=keyboard)
-    
-def timer(bot, update):    
-    if converted == " metre":
-        keyboard = build_keyboard(modern_time)
-        bot.send_message(chat_id=update.message.chat_id, 
-                         text="Select the unit you wish to convert to: ",
-                         reply_markup=keyboard)
-"""
-
 def calc(bot, update):
     input = float(update.message.text)
+    global done
+    done = True
     bot.send_message(chat_id = update.message.chat_id, 
-                     text = "{0} {1}s equals: {2}".format(input, unit, ayur.convert(unit, input)+converted))   
+                     text = "{0} {1}s equals: {2}".format(input, unit, ayur.convert(unit, input)+converted))
+    start(bot, update)  
 
 #Start of handlers
 start_handler = CommandHandler('start', start)
