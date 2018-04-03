@@ -1,1 +1,1 @@
-TOKEN = '594864550:AAFeNXYHNew-EMHpRfYG5fU50wOUE12tFYw'
+TOKEN = 'enter key here'
