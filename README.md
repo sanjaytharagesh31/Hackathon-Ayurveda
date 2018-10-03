@@ -1,7 +1,7 @@
 # Dependencies:
 1) Install python 3.x and pip.
 2) Install Flask and Flask-compress.
-3) Any modern browser.
+3) Any modern browser. (Google Chrome is recommended)
 
 # Instructions:
 1) Clone this repo to your device.
