@@ -1,0 +1,558 @@
+<html>
+	<head>
+		<div id="google_translate_element"></div><script type="text/javascript">
+			function googleTranslateElementInit() {
+			  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+			}
+			</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+					
+		<title>Ayurveda | Conversion</title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald:600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+		<link rel="shortcut icon" href="favicon.png" type="image/png">
+		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
+
+
+		<style>
+			body {
+				padding: 0%;
+				margin: 0%;
+				background-image: url("{{url_for('static', filename='boi.jpg')}}");
+				background-size: cover;
+			}
+			
+			.nav ul {
+				list-style: none;
+				background-color: #2979FF;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+				box-shadow: 1px 1px 1px #263238;
+			}
+			.nav li {
+				font-family: 'Raleway', sans-serif;
+				font-size: 1.2em;
+				line-height: 40px;
+				height: 40px;
+				border-bottom: 1px solid #888;
+			}
+ 
+			.nav a {
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				transition: .3s background-color;
+			}
+ 
+			.nav a:hover {
+				background-color: #424242;
+			}
+
+			.nav li {
+				width: 120px;
+				border-bottom: none;
+				height: 50px;
+				line-height: 50px;
+				font-size: 1.4em;
+			}
+
+			/* Option 1 - Display Inline */
+			.nav li {
+				display: inline-block;
+				margin-right: -4px;
+			}
+
+			/* Options 2 - Float
+			.nav li {
+			float: left;
+			}
+			.nav ul {
+			overflow: auto;
+			width: 600px;
+			margin: 0 auto;
+			}
+			.nav {
+			background-color: #444;
+			}
+			*/
+			.sidenav {
+				height: 100%;
+				width: 18%;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #37474F;
+				overflow-x: hidden;
+				padding-top: 60px;
+				box-shadow: 1px 1px 1px #263238;
+			}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #E0E0E0;
+				display: block;
+			}
+
+			.sidenav a:hover {
+				color: black;
+			}
+
+			.sidenav {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+			}
+
+			@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
+			}
+
+			h1 {
+				text-align: center;
+				color: #E5E5E5;
+				font-family: 'Oswald', sans-serif;
+				font-size: 48px;
+				font-weight: 700;
+			}
+
+			.main {
+				margin: 0 auto;
+				width: 100%;
+				max-width: 600px;
+				text-align: center;
+				box-sizing: border-box;
+			}
+
+			.main input {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 1em;
+				width: 100%;
+				text-align: center;
+				margin-top: 10px;
+				height: 40px;
+				box-sizing: border-box;
+			}
+
+			.main span {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				width: 100%;
+			}
+
+			.main span select {
+				background-color: #263648;
+				color: #fff;
+				font-size: inherit;
+				padding: 10px;
+				width: 100%;
+				border: 0;
+				margin: 0;
+				border-radius: 0px;
+				text-indent: 0.01px;
+				text-overflow: '';
+				-webkit-appearance: none; /* hide default arrow in chrome OSX */
+			}
+
+			.main span::before,
+			.main span::after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+			}
+
+			.main span::after { /*  Custom dropdown arrow */
+				content: "\25BC";
+				height: 1em;
+				font-size: .625em;
+				line-height: 1;
+				right: 1.5em;
+				top: 50%;
+				margin-top: -.5em;
+				color: #131B24;
+			}
+
+			.main span::before { /*  Custom dropdown arrow cover */
+				width: 2.5em;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				border-radius: 0;
+				background-color: #202E3C;
+			}
+
+			.from, .to {
+				margin-top: 10px;
+				box-sizing: border-box;
+				width: 30%;
+			}
+
+			.from {
+				float: left;
+				padding-right: 10px;
+			}
+
+			.to {
+				float: right;
+				padding-left: 10px;
+			}
+
+			#google_translate_element{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-right: 1%;
+				padding-bottom: 1%;
+			}
+		</style>
+
+	</head>
+	<body onload="loadFirst()">
+		<header>
+			<div class="nav">
+				<ul>
+				<li class="ayurveda"><a href="{{url_for('master')}}">Ayurveda</a></li>
+				<li class="unani"><a href="{{url_for('unani')}}">Unani</a></li>
+				<li class="siddha"><a href="{{url_for('siddha')}}">Siddha</a></li>
+				</ul>
+			</div>
+		</header>
+		<div id="mySidenav" class="sidenav">
+				<a href="{{url_for('master')}}">Home</a>
+				<a href="https://siddharthsham.github.io/doggowalk/" target="_blank">Blog</a>
+				<a href="{{url_for('videos')}}" target="_blank">Videos</a>
+				<a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
+				<a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
+				<a href="https://drive.google.com/file/d/11-qPo-VUHsop5xmdHFcfk2hqR6PiCKOt/view?usp=sharing" target="_blank">Android-App</a>
+			  </div>
+			  
+			  
+		<h1>AYURVEDIC UNIT<br>CONVERTER</h1>
+		<div class="main">
+			<div class="selectCategory">
+				<!--Enter Category:-->
+				<span>
+					<select onchange="placeInput(); placeOutput(); placeAuthor()" id="five">
+					</select>
+				</span>
+			</div>
+
+			<div class="from">
+					<!--Author:-->
+					<input type="text" placeholder="Select the Author" disabled />
+					<span>
+						<select id="six" onchange="show(); placeInput(); placeOutput()"> </select>
+					</span>      
+				</div>
+
+			<div class="from" style="margin-left: 35px">
+				<input type="text" placeholder="Enter a number" onkeyup="show()" id="one" />
+				<!--Unit:-->
+				<span>
+					<select id="three" onchange="show()"> </select>
+				</span>      
+			</div>
+
+			<div class="to">
+				<input type="text" id="two" placeholder="Result...">
+				<!--Covert:-->
+				<span>
+					<select onchange="show()" id="four"> </select> 
+				</span>
+			</div>
+
+		</div>
+	</body>
+</html>
+
+<script>
+	var a= document.getElementById("six");
+	var v= document.getElementById("five");
+	var w= document.getElementById("one");
+	var x= document.getElementById("two");
+	var y= document.getElementById("three");
+	var z= document.getElementById("four");
+	
+	var factor = new Array();
+	/*
+		0 -> weight factor to convert into grams
+		1 -> length factor to cinvert into cms
+		2 -> time factor in seconds
+	*/
+	factor[0] = new Array(0.125, 0.125, 1, 12, 12, 24, 48, 96, 192, 384, 768, 3072, 4800, 12288, 24576, 49152, 49152, 96, 196.608);
+	factor[1] = new Array(0.24, 1.95, 22.86, 41.91, 45.72, 55.88, 182.88);
+	factor[2] = new Array(0.388333, 0.766666, 1.553333, 4.66, 1440, 140, 2880, 86400, 1296000, 2592000, 5184000, 15552000, 31104000, 155520000);
+	factor[4] = new Array(0.375, 0.42105, 6, 8, 12, 48, 192, 768, 3072, 4800, 12288, 96)
+	factor[5] = new Array(0.0000012, 0.0000361, 0.0000361, 0.000217, 0.001302, 0.003906, 0.03125, 0.125, 0.125, 0.750, 0.750, 0.750, 3, 3, 6, 6, 6, 6, 12, 3, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 24, 24, 24, 48, 48, 48, 48, 48, 48, 48, 96, 192, 192, 192, 192, 384, 384, 384, 768, 3072, 3072, 3072, 4800, 12288, 12288, 12288, 12288, 12288, 12288, 12288, 24576, 24576, 49152, 49152, 49152, 96000, 196608)
+	factor[6] = new Array(0.0000004463, 0.000002678, 0.00001607, 0.00009645, 0.0005787, 0.003472, 0.020833, 0.125, 0.375, 0.250, 0.750, 3, 3, 3, 6, 6, 12, 1.5, 12, 12, 12, 12, 12, 12, 12, 12, 24, 48, 48, 48, 48, 96, 192, 192, 384, 768, 1536, 3072, 3072, 4800)
+	factor[7] = new Array(0.0000361, 0.000217, 0.001302, 0.003906, 0.03125, 0.125, 0.125, 0.750, 0.750, 0.750, 0.750, 3, 3, 6, 6, 6, 6, 12, 3, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 24, 24, 24, 48, 48, 48, 48, 48, 48, 96, 192, 192, 192, 192, 384, 384, 384, 768, 3072, 3072, 3072, 4800, 12288, 12288, 12288, 12288, 12288, 12288, 12288, 24576, 24576, 49152, 49152, 49152, 96000, 196608 )
+	factor[8] = new Array(0.00005425, 0.0003255, 0.0019531, 0.015625, 0.03125, 0.0625, 0.250, 1, 1, 1, 3, 6, 6, 6, 12, 12, 12, 12, 12, 12, 12, 48, 12, 24, 24, 24, 48, 48, 48, 48, 48, 48, 96, 192, 192, 96, 384, 768, 3072, 4800, 12288, 12288, 12288, 12288, 12288, 12288, 24576, 24576, 49152, 49152, 49152, 786432)
+	
+	function placeInput() {
+		if (v.value=="weight") {
+			if(a.value=="1") {
+				y.innerHTML="<option value=\"1\">Ratti</option><option value=\"2\">Gunja</option><option value=\"3\">Masha</option><option value=\"4\">Karsha</option><option value=\"5\">tola</option><option value=\"6\">Shukti</option><option value=\"7\">Pala</option><option value=\"8\">Prasrita</option><option value=\"9\">Kudava</option><option value=\"10\">Manika</option><option value=\"11\">Prastha</option><option value=\"12\">Adhaka</option><option value=\"13\">Tula</option><option value=\"14\">Drona</option><option value=\"15\">Shurpa</option><option value=\"16\">Droni</option><option value=\"17\">Vahi</option><option value=\"18\">bhara</option><option value=\"19\">Khari</option>"
+			}
+			if(a.value=="2") {
+				y.innerHTML="<option value=\"1\">Suvarna Mashaka</option><option value=\"2\">Nishpava</option><option value=\"3\">Suvarna</option><option value=\"4\">Dharana/Tola</option><option value=\"5\">Karsha</option><option value=\"6\">Pala</option><option value=\"7\">Kudava</option><option value=\"8\">Prastha</option><option value=\"9\">Adhaka</option><option value=\"10\">Tula</option><option value=\"11\">Drona</option><option value=\"13\">Bhara</option>"
+			}
+			if(a.value=="3") {
+				y.innerHTML="<option value=\"1\">Paramanu</option><option value=\"2\">Vanshi</option><option value=\"3\">trasrenu</option><option value=\"4\">maricha</option><option value=\"5\">rajika</option><option value=\"6\">sarshapa</option><option value=\"7\">yava</option><option value=\"8\">ratti</option><option value=\"9\">gunga</option><option value=\"10\">Mashaka</option><option value=\"11\">Hema</option><option value=\"12\">Dhanyaka</option><option value=\"13\">Shana</option><option value=\"14\">Tanka</option><option value=\"15\">Kola</option><option value=\"16\">Kshudraka</option><option value=\"17\">Vataka</option><option value=\"18\">Drankshana</option><option value=\"19\">Suvarna</option><option value=\"20\">Dharana</option><option value=\"21\">Karsha</option><option value=\"22\">Panimanika</option><option value=\"23\">Aksha</option><option value=\24\">Pichu</option><option value=\"25\">Panitala</option><option value=\"26\">Kinchitpani</option><option value=\"27\">Tinduka</option><option value=\"28\">Vidalpadaka</option><option value=\"29\">Shodashika</option><option value=\"30\">Karamadhya</option><option value=\"31\">Hansapada</option><option value=\"32\">Kavalagraha</option><option value=\"33\">Udumbara</option><option value=\"34\">Shukti</option><option value=\"35\">Ardhapala</option><option value=\"36\">Ashtamika</option><option value=\"37\">Pala</option><option value=\"38\">Mushti</option><option value=\"39\">Amra</option><option value=\"40\">Chaturthika</option><option value=\"41\">Prakuncha</option><option value=\"42\">Shodashi</option><option value=\"43\">Bilva</option><option value=\"44\">Prasrita</option><option value=\"45\">Kudava</option><option value=\"46\">Anjali</option><option value=\"47\">Ardhasharavaka</option><option value=\"48\">Ashtamana</option><option value=\"49\">Manika</option><option value=\"50\">Sharava</option><option value=\"51\">Ashtapala</option><option value=\"52\">Prastha</option><option value=\"53\">Adhaka</option><option value=\"54\">Bhajana</option><option value=\"55\">Kansapatra</option><option value=\"56\">Tula</option><option value=\"57\">Drona</option><option value=\"58\">Kalasha</option><option value=\"59\">Nalvana</option><option value=\"60\">Armana</option><option value=\"61\">Unmana</option><option value=\"62\">Ghata</option><option value=\"63\">Rashi</option><option value=\"64\">Shurpa</option><option value=\"65\">Kumbha</option><option value=\"66\">Droni</option><option value=\"67\">Vahi</option><option value=\"68\">Goni</option><option value=\"69\">Bhara</option><option value=\"70\">Khari</option>"
+			}
+			if(a.value=="4") {
+				y.innerHTML="<option value=\"1\">Anu</option><option value=\"2\">Truti</option><option value=\"3\">Liksha</option><option value=\"4\">Yuka</option><option value=\"5\">Raja</option><option value=\"6\">Sarshapa</option><option value=\"7\">Yava</option><option value=\"8\">Gunja</option><option value=\"9\">Valla</option><option value=\"10\">Nishpava</option><option value=\"11\">Masha</option><option value=\"12\">Shana</option><option value=\"13\">Nishka</option><option value=\"14\">Kala</option><option value=\"15\">Kola</option><option value=\"16\">Vataka</option><option value=\"17\">Suvarna</option><option value=\"18\">Dharana</option><option value=\"19\">Karsha</option><option value=\"20\">Aksha</option><option value=\"21\">Panitala</option><option value=\"22\">Vidalpadaka</option><option value=\"23\">Kavalagraha</option><option value=\"24\">Udumbara</option><option value=\"25\">Tola</option><option value=\"26\">Nishkachatushtya</option><option value=\"27\">Shukti</option><option value=\"28\">Pala</option><option value=\"29\">Mushti</option><option value=\"30\">Prakuncha</option><option value=\"31\">Bilva</option><option value=\32\">Prasrita</option><option value=\"33\">Kudava</option><option value=\"34\">Anjali</option><option value=\"35\">Manika</option><option value=\"36\">Prastha</option><option value=\"37\">Shubha</option><option value=\"38\">Adhaka</option><option value=\"39\">Patraka</option><option value=\"40\">Tula</option>"
+			
+			}
+			if(a.value=="5") {
+				y.innerHTML="<option value=\"1\">Dhwanshi</option><option value=\"2\">Maricha</option><option value=\"3\">Rajika</option><option value=\"4\">Sarshapa</option><option value=\"5\">Yava</option><option value=\"6\">Ratti</option><option value=\"7\">Gunga</option><option value=\"8\">Mashaka</option><option value=\"9\">Hema</option><option value=\"10\">Dhamaka</option><option value=\"11\">Masha</option><option value=\"12\">Shana</option><option value=\"13\">Tanka</option><option value=\"14\">Kola</option><option value=\"15\">Kshudra</option><option value=\"16\">Morataka</option><option value=\"17\">Drankshana</option><option value=\"18\">Suvarna</option><option value=\"19\">Dharana</option><option value=\"20\">Karsha</option><option value=\"21\">Panimanika</option><option value=\"22\">Aksha</option><option value=\23\">Pichu</option><option value=\"24\">Panitala</option><option value=\"25\">Kinchitpani</option><option value=\"26\">Tinduka</option><option value=\"27\">Vidalpadaka</option><option value=\"28\">Shodashika</option><option value=\"29\">Karamadhya</option><option value=\"30\">Hansapada</option><option value=\"31\">Kavalagraha</option><option value=\"32\">Udumbara</option><option value=\"33\">Tola</option><option value=\"34\">Shukti</option><option value=\"35\">Ardhapala</option><option value=\"36\">Ashtamika</option><option value=\"37\">Pala</option><option value=\"38\">Mushti</option><option value=\"39\">Chaturthika</option><option value=\"40\">Prakuncha</option><option value=\"41\">Shodashi</option><option value=\"42\">Bilva</option><option value=\"43\">Prasrita</option><option value=\"44\">Kudava</option><option value=\"45\">Anjali</option><option value=\"46\">Ardhasharavaka</option><option value=\"47\">Ashtamana</option><option value=\"48\">Manika</option><option value=\"49\">Sharava</option><option value=\"50\">Ashtapala</option><option value=\"51\">Prastha</option><option value=\"52\">Adhaka</option><option value=\"53\">Bhajana</option><option value=\"54\">Kansapatra</option><option value=\"55\">Tula</option><option value=\"56\">Drona</option><option value=\"57\">Kalasha</option><option value=\"58\">Nalvana</option><option value=\"59\">Armana</option><option value=\"60\">Unmana</option><option value=\"61\">Ghata</option><option value=\"62\">Rashi</option><option value=\"63\">Shurpa</option><option value=\"64\">Kumbha</option><option value=\"65\">Droni</option><option value=\"66\">Vahi</option><option value=\"67\">Goni</option><option value=\"68\">Bhara</option><option value=\"69\">Khari</option>"
+			}
+			if(a.value=="6") {
+				y.innerHTML="<option value=\"1\">Dhwanshi</option><option value=\"2\">Maricha</option><option value=\"3\">Rakta Sarshapa</option><option value=\"4\">Tandula</option><option value=\"5\">Dhanyamasha</option><option value=\"6\">Yava</option><option value=\"7\">Andika</option><option value=\"8\">Mashaka</option><option value=\"9\">Hema</option><option value=\"10\">Dhanyaka</option><option value=\"11\">Shana</option><option value=\"12\">Kola</option><option value=\"13\">Drankshana</option><optional value=\"14\">Badara</option><option value=\"15\">Suvarna</option><option value=\"16\">Karsha</option><option value=\"17\">Aksha</option><option value=\18\">Pichu</option><option value=\"19\">Panitala</option><option value=\"20\">Tinduka</option><option value=\"21\">Vidalpadaka</option><option value=\"22\">Shodashika</option><option value=\"23\">Kavalagraha</option><option value=\"24\">Shukti</option><option value=\"25\">Palardha</option><option value=\"26\">Ashtamika</option><option value=\"27\">Pala</option><option value=\"28\">Mushti</option><option value=\"29\">Amra</option><option value=\"30\">Chaturthika</option><option value=\"31\">Prakuncha</option><option value=\"32\">Bilva</option><option value=\"33\">Prasrita</option><option value=\"34\">Kudava</option><option value=\"35\">Anjali</option><option value=\"36\">Ashtamana</option><option value=\"37\">Manika</option><option value=\"38\">Prastha</option><option value=\"39\">Adhaka</option><option value=\"40\">Tula</option><option value=\"41\">Drona</option><option value=\"42\">Kalasha</option><option value=\"43\">Nalvana</option><option value=\"44\">Armana</option><option value=\"45\">Unmana</option><option value=\"46\">Ghata</option><option value=\"47\">Shurpa</option><option value=\"48\">Kumbha</option><option value=\"49\">Goni</option><option value=\"50\">Bhara</option><option value=\"51\">Khari</option><option value=\"52\">Vaha</option>"
+				}
+		}
+		if (v.value=="length") {
+			y.innerHTML="<option value=\"1\">Yavodara</option><option value=\"2\">Angula</option><option value=\"3\">Vitasti</option><option value=\"4\">Aratni</option><option value=\"5\">Hasta</option><option value=\"6\">Nrpahasta/Rajahasta</option><option value=\"7\">Vyama</option>"
+		}
+		if (v.value=="time") {
+			y.innerHTML="<option value=\"1\">Ksanas</option><option value=\"2\">Lava</option><option value=\"3\">Nimesa</option><option value=\"4\">Kastha</option><option value=\"5\">Ghatis</option><option value=\"6\">Kala</option><option value=\"7\">Muhurta</option><option value=\"8\">Ahoratra</option><option value=\"9\">Paksa</option><option value=\"10\">Masa</option><option value=\"11\">Rtu</option><option value=\"12\">Ayana</option><option value=\"13\">Samvatsara</option><option value=\"14\">yuga</option>"
+			/* 
+				1 Ahoratra of Devas = 1 year
+			   	1 Ahoratra of Pitaras = 1 month 
+			*/	 
+		}
+		w.value = ""; //to empty the input box
+	}
+	
+	function placeAuthor() {
+		if(v.value=="weight") {
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
+		}
+
+		if(v.value=="length") {
+			a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option>"
+		}
+		if(v.value=="time") {
+			a.innerHTML = "<option value=\"1\">API</option>"
+		}
+
+		show();
+	}
+
+	function placeOutput() {
+		if (v.value=="weight") {
+			if (a.value=="1"){
+				z.innerHTML="<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>"
+		}
+			if (a.value=="2"){
+				z.innerHTML="<option value=\"1\">grams</option><option value=\"2\">Kilograms</option><option value=\"3\">Suvarna Mashaka</option><option value=\"4\">Nishpava</option><option value=\"5\">Suvarna</option><option value=\"6\">Dharana/Tola</option><option value=\"7\">Karsha</option><option value=\"8\">Pala</option><option value=\"9\">Kudava</option><option value=\"10\">Prastha</option><option value=\"11\">Adhaka</option><option value=\"12\">Tula</option><option value=\"13\">Drona</option><option value=\"14\">Bhara</option>"
+			
+			}
+			if (a.value=="3"){
+				z.innerHTML="<option value=\"71\">grams</option><option value=\"72\">Kilograms</option><option value=\"1\">Paramanu</option><option value=\"2\">Vanshi</option><option value=\"3\">trasrenu</option><option value=\"4\">maricha</option><option value=\"5\">rajika</option><option value=\"6\">sarshapa</option><option value=\"7\">yava</option><option value=\"8\">ratti</option><option value=\"9\">gunga</option><option value=\"10\">Mashaka</option><option value=\"11\">Hema</option><option value=\"12\">Dhanyaka</option><option value=\"13\">Shana</option><option value=\"14\">Tanka</option><option value=\"15\">Kola</option><option value=\"16\">Kshudraka</option><option value=\"17\">Vataka</option><option value=\"18\">Drankshana</option><option value=\"19\">Suvarna</option><option value=\"20\">Dharana</option><option value=\"21\">Karsha</option><option value=\"22\">Panimanika</option><option value=\"23\">Aksha</option><option value=\24\">Pichu</option><option value=\"25\">Panitala</option><option value=\"26\">Kinchitpani</option><option value=\"27\">Tinduka</option><option value=\"28\">Vidalpadaka</option><option value=\"29\">Shodashika</option><option value=\"30\">Karamadhya</option><option value=\"31\">Hansapada</option><option value=\"32\">Kavalagraha</option><option value=\"33\">Udumbara</option><option value=\"34\">Shukti</option><option value=\"35\">Ardhapala</option><option value=\"36\">Ashtamika</option><option value=\"37\">Pala</option><option value=\"38\">Mushti</option><option value=\"39\">Amra</option><option value=\"40\">Chaturthika</option><option value=\"41\">Prakuncha</option><option value=\"42\">Shodashi</option><option value=\"43\">Bilva</option><option value=\"44\">Prasrita</option><option value=\"45\">Kudava</option><option value=\"46\">Anjali</option><option value=\"47\">Ardhasharavaka</option><option value=\"48\">Ashtamana</option><option value=\"49\">Manika</option><option value=\"50\">Sharava</option><option value=\"51\">Ashtapala</option><option value=\"52\">Prastha</option><option value=\"53\">Adhaka</option><option value=\"54\">Bhajana</option><option value=\"55\">Kansapatra</option><option value=\"56\">Tula</option><option value=\"57\">Drona</option><option value=\"58\">Kalasha</option><option value=\"59\">Nalvana</option><option value=\"60\">Armana</option><option value=\"61\">Unmana</option><option value=\"62\">Ghata</option><option value=\"63\">Rashi</option><option value=\"64\">Shurpa</option><option value=\"65\">Kumbha</option><option value=\"66\">Droni</option><option value=\"67\">Vahi</option><option value=\"68\">Goni</option><option value=\"69\">Bhara</option><option value=\"70\">Khari</option>"
+			}
+			if (a.value=="4"){
+				z.innerHTML="<option value=\"41\">grams</option><option value=\"42\">Kilograms</option><option value=\"1\">Anu</option><option value=\"2\">Truti</option><option value=\"3\">Liksha</option><option value=\"4\">Yuka</option><option value=\"5\">Raja</option><option value=\"6\">Sarshapa</option><option value=\"7\">Yava</option><option value=\"8\">Gunja</option><option value=\"9\">Valla</option><option value=\"10\">Nishpava</option><option value=\"11\">Masha</option><option value=\"12\">Shana</option><option value=\"13\">Nishka</option><option value=\"14\">Kala</option><option value=\"15\">Kola</option><option value=\"16\">Vataka</option><option value=\"17\">Suvarna</option><option value=\"18\">Dharana</option><option value=\"19\">Karsha</option><option value=\"20\">Aksha</option><option value=\"21\">Panitala</option><option value=\"22\">Vidalpadaka</option><option value=\"23\">Kavalagraha</option><option value=\"24\">Udumbara</option><option value=\"25\">Tola</option><option value=\"26\">Nishkachatushtya</option><option value=\"27\">Shukti</option><option value=\"28\">Pala</option><option value=\"29\">Mushti</option><option value=\"30\">Prakuncha</option><option value=\"31\">Bilva</option><option value=\32\">Prasrita</option><option value=\"33\">Kudava</option><option value=\"34\">Anjali</option><option value=\"35\">Manika</option><option value=\"36\">Prastha</option><option value=\"37\">Shubha</option><option value=\"38\">Adhaka</option><option value=\"39\">Patraka</option><option value=\"40\">Tula</option>"
+				}
+			if (a.value=="5"){
+				z.innerHTML="<option value=\"70\">grams</option><option value=\"71\">Kilograms</option><option value=\"1\">Dhwanshi</option><option value=\"2\">Maricha</option><option value=\"3\">Rajika</option><option value=\"4\">Sarshapa</option><option value=\"5\">Yava</option><option value=\"6\">Ratti</option><option value=\"7\">Gunga</option><option value=\"8\">Mashaka</option><option value=\"9\">Hema</option><option value=\"10\">Dhamaka</option><option value=\"11\">Masha</option><option value=\"12\">Shana</option><option value=\"13\">Tanka</option><option value=\"14\">Kola</option><option value=\"15\">Kshudra</option><option value=\"16\">Morataka</option><option value=\"17\">Drankshana</option><option value=\"18\">Suvarna</option><option value=\"19\">Dharana</option><option value=\"20\">Karsha</option><option value=\"21\">Panimanika</option><option value=\"22\">Aksha</option><option value=\23\">Pichu</option><option value=\"24\">Panitala</option><option value=\"25\">Kinchitpani</option><option value=\"26\">Tinduka</option><option value=\"27\">Vidalpadaka</option><option value=\"28\">Shodashika</option><option value=\"29\">Karamadhya</option><option value=\"30\">Hansapada</option><option value=\"31\">Kavalagraha</option><option value=\"32\">Udumbara</option><option value=\"33\">Tola</option><option value=\"34\">Shukti</option><option value=\"35\">Ardhapala</option><option value=\"36\">Ashtamika</option><option value=\"37\">Pala</option><option value=\"38\">Mushti</option><option value=\"39\">Chaturthika</option><option value=\"40\">Prakuncha</option><option value=\"41\">Shodashi</option><option value=\"42\">Bilva</option><option value=\"43\">Prasrita</option><option value=\"44\">Kudava</option><option value=\"45\">Anjali</option><option value=\"46\">Ardhasharavaka</option><option value=\"47\">Ashtamana</option><option value=\"48\">Manika</option><option value=\"49\">Sharava</option><option value=\"50\">Ashtapala</option><option value=\"51\">Prastha</option><option value=\"52\">Adhaka</option><option value=\"53\">Bhajana</option><option value=\"54\">Kansapatra</option><option value=\"55\">Tula</option><option value=\"56\">Drona</option><option value=\"57\">Kalasha</option><option value=\"58\">Nalvana</option><option value=\"59\">Armana</option><option value=\"60\">Unmana</option><option value=\"61\">Ghata</option><option value=\"62\">Rashi</option><option value=\"63\">Shurpa</option><option value=\"64\">Kumbha</option><option value=\"65\">Droni</option><option value=\"66\">Vahi</option><option value=\"67\">Goni</option><option value=\"68\">Bhara</option><option value=\"69\">Khari</option>"
+				}
+			if (a.value=="6"){
+				z.innerHTML="<option value=\"53\">grams</option><option value=\"54\">Kilograms</option><option value=\"1\">Dhwanshi</option><option value=\"2\">Maricha</option><option value=\"3\">Rakta Sarshapa</option><option value=\"4\">Tandula</option><option value=\"5\">Dhanyamasha</option><option value=\"6\">Yava</option><option value=\"7\">Andika</option><option value=\"8\">Mashaka</option><option value=\"9\">Hema</option><option value=\"10\">Dhanyaka</option><option value=\"11\">Shana</option><option value=\"12\">Kola</option><option value=\"13\">Drankshana</option><optional value=\"14\">Badara</option><option value=\"15\">Suvarna</option><option value=\"16\">Karsha</option><option value=\"17\">Aksha</option><option value=\18\">Pichu</option><option value=\"19\">Panitala</option><option value=\"20\">Tinduka</option><option value=\"21\">Vidalpadaka</option><option value=\"22\">Shodashika</option><option value=\"23\">Kavalagraha</option><option value=\"24\">Shukti</option><option value=\"25\">Palardha</option><option value=\"26\">Ashtamika</option><option value=\"27\">Pala</option><option value=\"28\">Mushti</option><option value=\"29\">Amra</option><option value=\"30\">Chaturthika</option><option value=\"31\">Prakuncha</option><option value=\"32\">Bilva</option><option value=\"33\">Prasrita</option><option value=\"34\">Kudava</option><option value=\"35\">Anjali</option><option value=\"36\">Ashtamana</option><option value=\"37\">Manika</option><option value=\"38\">Prastha</option><option value=\"39\">Adhaka</option><option value=\"40\">Tula</option><option value=\"41\">Drona</option><option value=\"42\">Kalasha</option><option value=\"43\">Nalvana</option><option value=\"44\">Armana</option><option value=\"45\">Unmana</option><option value=\"46\">Ghata</option><option value=\"47\">Shurpa</option><option value=\"48\">Kumbha</option><option value=\"49\">Goni</option><option value=\"50\">Bhara</option><option value=\"51\">Khari</option><option value=\"52\">Vaha</option>"
+				}
+		}
+		if (v.value=="length") {
+			if(a.value=="1") {
+				z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option>"
+			}
+			if(a.value=="2") {
+				z.innerHTML="<option value=\"1\">Inch</option><option value=\"2\">Centimeters</option><option value=\"3\">Yavodara</option><option value=\"4\">Angula</option><option value=\"5\">Vitasti</option><option value=\"6\">Aratni</option><option value=\"7\">Hasta</option><option value=\"8\">Nrpahasta/Rajahasta</option><option value=\"9\">Vyama</option>"
+			}
+		}
+		if(v.value=="time") {
+		z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option><option value=\"7\">Ksanas</option><option value=\"8\">Lava</option><option value=\"9\">Nimesa</option><option value=\"10\">Kastha</option><option value=\"11\">Ghatis</option><option value=\"12\">Kala</option><option value=\"13\">Muhurta</option><option value=\"14\">Ahoratra</option><option value=\"15\">Paksa</option><option value=\"16\">Masa</option><option value=\"17\">Rtu</option><option value=\"18\">Ayana</option><option value=\"19\">Samvatsara</option><option value=\"20\">yuga</option>"
+		}
+		x.value = ""; //to empty the output box
+	}
+	
+	function show() {
+		if (v.value=="weight") {
+			if (a.value=='1'){
+
+			
+			if (z.value=="1")
+				x.value = w.value*factor[0][(y.value)-1];
+			if (z.value=="2")	
+				x.value = w.value*factor[0][(y.value)-1]/1000; //convert to kg
+			if (z.value=="3")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="4")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="5")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="6")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="7")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="8")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="9")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="10")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="11")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="12")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="13")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="14")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="15") 
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="16")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="17")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="18")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="19")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="20")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+			if (z.value=="21")
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-3]);
+		}
+
+		if(a.value=='2')
+		{
+			if (z.value=="1")
+				x.value = w.value*factor[4][(y.value)-1];
+			if (z.value=="2")	
+				x.value = w.value*factor[4][(y.value)-1]/1000; //convert to kg
+			if (z.value=="3" || z.value=="4" || z.value=="5" || z.value=="6" || z.value=="7" || z.value=="8" || z.value=="9" || z.value=="10" || z.value=="11" || z.value=="12")
+				x.value = w.value*factor[4][(y.value)-1]/(factor[4][(z.value)-3]);
+		}
+
+		if(a.value=='3')
+		{
+			if (z.value=="71")
+				x.value = w.value*factor[5][(y.value)-1];
+			if (z.value=="72")	
+				x.value = w.value*factor[5][(y.value)-1]/1000; //convert to kg
+			if (z.value=="1" ||z.value=="2" ||z.value=="3" || z.value=="4" || z.value=="5" || z.value=="6" || z.value=="7" || z.value=="8" || z.value=="9" || z.value=="10" || z.value=="11" ||z.value=="12" ||z.value=="13" || z.value=="14" || z.value=="15" || z.value=="16" || z.value=="17" || z.value=="18" || z.value=="19" || z.value=="20" || z.value=="21" ||z.value=="22" ||z.value=="23" || z.value=="24" || z.value=="25" || z.value=="26" || z.value=="27" || z.value=="28" || z.value=="29" || z.value=="30" || z.value=="31" ||z.value=="32" ||z.value=="33" || z.value=="34" || z.value=="35" || z.value=="36" || z.value=="37" || z.value=="38" || z.value=="39" || z.value=="40" || z.value=="41" ||z.value=="42" ||z.value=="43" || z.value=="44" || z.value=="45" || z.value=="46" || z.value=="47" || z.value=="48" || z.value=="49" || z.value=="50" || z.value=="51" ||z.value=="52" ||z.value=="53" || z.value=="54" || z.value=="55" || z.value=="56" || z.value=="57" || z.value=="58" || z.value=="59" || z.value=="60" || z.value=="61" ||z.value=="62" ||z.value=="63" || z.value=="64" || z.value=="65" || z.value=="66" || z.value=="67" || z.value=="68" || z.value=="69" || z.value=="70")
+				x.value = w.value*factor[5][(y.value)-1]/(factor[5][(z.value)-1]);
+		}
+		
+		if(a.value=='4')
+		{
+			if (z.value=="41")
+				x.value = w.value*factor[6][(y.value)-1];
+			if (z.value=="42")	
+				x.value = w.value*factor[6][(y.value)-1]/1000; //convert to kg
+			if (z.value=="1" ||z.value=="2" ||z.value=="3" || z.value=="4" || z.value=="5" || z.value=="6" || z.value=="7" || z.value=="8" || z.value=="9" || z.value=="10" || z.value=="11" ||z.value=="12" ||z.value=="13" || z.value=="14" || z.value=="15" || z.value=="16" || z.value=="17" || z.value=="18" || z.value=="19" || z.value=="20" || z.value=="21" ||z.value=="22" ||z.value=="23" || z.value=="24" || z.value=="25" || z.value=="26" || z.value=="27" || z.value=="28" || z.value=="29" || z.value=="30" || z.value=="31" ||z.value=="32" ||z.value=="33" || z.value=="34" || z.value=="35" || z.value=="36" || z.value=="37" || z.value=="38" || z.value=="39" || z.value=="40")
+				x.value = w.value*factor[6][(y.value)-1]/(factor[6][(z.value)-1]);
+		}
+
+		if(a.value=='5')
+		{
+			if (z.value=="70")
+				x.value = w.value*factor[7][(y.value)-1];
+			if (z.value=="71")	
+				x.value = w.value*factor[7][(y.value)-1]/1000; //convert to kg
+			if (z.value=="1" ||z.value=="2" ||z.value=="3" || z.value=="4" || z.value=="5" || z.value=="6" || z.value=="7" || z.value=="8" || z.value=="9" || z.value=="10" || z.value=="11" ||z.value=="12" ||z.value=="13" || z.value=="14" || z.value=="15" || z.value=="16" || z.value=="17" || z.value=="18" || z.value=="19" || z.value=="20" || z.value=="21" ||z.value=="22" ||z.value=="23" || z.value=="24" || z.value=="25" || z.value=="26" || z.value=="27" || z.value=="28" || z.value=="29" || z.value=="30" || z.value=="31" ||z.value=="32" ||z.value=="33" || z.value=="34" || z.value=="35" || z.value=="36" || z.value=="37" || z.value=="38" || z.value=="39" || z.value=="40" || z.value=="41" ||z.value=="42" ||z.value=="43" || z.value=="44" || z.value=="45" || z.value=="46" || z.value=="47" || z.value=="48" || z.value=="49" || z.value=="50" || z.value=="51" ||z.value=="52" ||z.value=="53" || z.value=="54" || z.value=="55" || z.value=="56" || z.value=="57" || z.value=="58" || z.value=="59" || z.value=="60" || z.value=="61" ||z.value=="62" ||z.value=="63" || z.value=="64" || z.value=="65" || z.value=="66" || z.value=="67" || z.value=="68" || z.value=="69")
+				x.value = w.value*factor[7][(y.value)-1]/(factor[7][(z.value)-1]);
+		}
+
+		if(a.value=='6')
+		{
+			if (z.value=="53")
+				x.value = w.value*factor[8][(y.value)-1];
+			if (z.value=="54")	
+				x.value = w.value*factor[8][(y.value)-1]/1000; //convert to kg
+			if (z.value=="1" ||z.value=="2" ||z.value=="3" || z.value=="4" || z.value=="5" || z.value=="6" || z.value=="7" || z.value=="8" || z.value=="9" || z.value=="10" || z.value=="11" ||z.value=="12" ||z.value=="13" || z.value=="14" || z.value=="15" || z.value=="16" || z.value=="17" || z.value=="18" || z.value=="19" || z.value=="20" || z.value=="21" ||z.value=="22" ||z.value=="23" || z.value=="24" || z.value=="25" || z.value=="26" || z.value=="27" || z.value=="28" || z.value=="29" || z.value=="30" || z.value=="31" ||z.value=="32" ||z.value=="33" || z.value=="34" || z.value=="35" || z.value=="36" || z.value=="37" || z.value=="38" || z.value=="39" || z.value=="40" || z.value=="41" ||z.value=="42" ||z.value=="43" || z.value=="44" || z.value=="45" || z.value=="46" || z.value=="47" || z.value=="48" || z.value=="49" || z.value=="50" || z.value=="51" ||z.value=="52")
+				x.value = w.value*factor[8][(y.value)-1]/(factor[8][(z.value)-1]);
+		}
+		}
+
+		
+		
+		if (v.value=="length") {
+			if (z.value=="1")
+				x.value = w.value*factor[1][(y.value)-1]*0.393701; //convert to inch
+			if (z.value=="2")
+				x.value = w.value*factor[1][(y.value)-1];
+			if (z.value=="3")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="4")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="5")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="6")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="7")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="8")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+			if (z.value=="9")
+				x.value = ( w.value*factor[1][(y.value)-1])/(factor[1][(z.value)-3]);
+		}
+		
+		if (v.value=="time") {
+			if (z.value=="1")
+				x.value = w.value*factor[2][(y.value)-1];
+			if (z.value=="2")
+				x.value = w.value*factor[2][(y.value)-1]/60;
+			if (z.value=="3")
+				x.value = w.value*factor[2][(y.value)-1]/3600;
+			if (z.value=="4")
+				x.value = w.value*factor[2][(y.value)-1]/86400;
+			if (z.value=="5")
+				x.value = w.value*factor[2][(y.value)-1]/2592000;
+			if (z.value=="6")
+				x.value = w.value*factor[2][(y.value)-1]/31104000;
+			if (z.value=="7")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="8")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="9")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="10")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="11")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="12")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="13")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="14")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="15")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="16")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="17")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="18")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="19")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+			if (z.value=="20")
+				x.value = (w.value*factor[2][(y.value)-1])/(factor[2][(z.value)-7]);
+		}
+	}
+
+	function loadFirst() {
+		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"length\">Length</option><option value=\"time\">Time</option>";
+		a.innerHTML = "<option value=\"1\">API</option><option value=\"2\">Sushruta</option><option value=\"3\">Sharangadhara</option><option value=\"4\">RRS</option><option value=\"5\">Vaidyaka paribhasha pradeepa</option><option value=\"6\">Charaka</option>";
+		y.innerHTML = "<option value=\"1\">Ratti</option><option value=\"2\">Gunja</option><option value=\"3\">Masha</option><option value=\"4\">Karsha</option><option value=\"5\">tola</option><option value=\"6\">Shukti</option><option value=\"7\">Pala</option><option value=\"8\">Prasrita</option><option value=\"9\">Kudava</option><option value=\"10\">Manika</option><option value=\"11\">Prastha</option><option value=\"12\">Adhaka</option><option value=\"13\">Tula</option><option value=\"14\">Drona</option><option value=\"15\">Shurpa</option><option value=\"16\">Droni</option><option value=\"17\">Vahi</option><option value=\"18\">bhara</option><option value=\"19\">Khari</option>";
+		z.innerHTML = "<option value=\"1\">grams</option><option value=\"2\">Kilograms</option>";
+		w.value = "";
+		x.value = "";
+	}
+
+</script>

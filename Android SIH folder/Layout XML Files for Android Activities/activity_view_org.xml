@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_blue_bright"
+    tools:context="ericjoseph.com.firebasework.ViewOrg">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="216dp"
+        android:text="Organization Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="42dp"
+        android:text="Organization Number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView6"
+        android:layout_below="@+id/orgphn"
+        android:layout_marginTop="38dp"
+        android:text="Organization Address"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/orgaddr"
+        android:layout_marginTop="29dp"
+        android:text="Organization email id"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <EditText
+        android:id="@+id/orgmail"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignStart="@+id/orgaddr"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/orgname"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignStart="@+id/orgphn"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/orgphn"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignStart="@+id/orgaddr"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/orgaddr"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView7"
+        android:layout_alignBottom="@+id/textView7"
+        android:layout_marginStart="11dp"
+        android:layout_toEndOf="@+id/textView7"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <ImageView
+        android:id="@+id/orgimg"
+        android:layout_width="350dp"
+        android:layout_height="170dp"
+        android:layout_above="@+id/orgname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:visibility="visible"
+        app:srcCompat="@color/colorPrimary" />
+
+    <Button
+        android:id="@+id/btnprev"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnnext"
+        android:layout_alignStart="@+id/textView8"
+        android:background="@color/colorPrimaryDark"
+        android:text="Previous"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <Button
+        android:id="@+id/btnnext"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orgmail"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/btnprev"
+        android:background="@color/colorPrimaryDark"
+        android:text="Next"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        tools:text="Next" />
+
+    <Button
+        android:id="@+id/btncert"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignTop="@+id/btnnext"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/btnnext"
+        android:background="@color/colorPrimaryDark"
+        android:text="Get Organization Certificate"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/loadvalues"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/orgimg"
+        android:layout_alignTop="@+id/btncert"
+        android:background="@color/colorPrimaryDark"
+        android:text="Load Data"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+</RelativeLayout>

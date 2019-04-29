@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
+    android:backgroundTint="@android:color/holo_green_light"
+    tools:context="ericjoseph.com.firebasework.SiddhaConverter">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="35dp"
+        android:text="Enter Value"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toEndOf="@+id/button4"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:nextFocusDown="@id/cat_spin" />
+
+    <Spinner
+        android:id="@+id/cat_spin"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/unit_spin"
+        android:layout_below="@+id/editText"
+        android:layout_marginTop="35dp"
+        android:nextFocusDown="@id/unit_spin" />
+
+    <Spinner
+        android:id="@+id/unit_spin"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/e2"
+        android:layout_centerVertical="true"
+        android:nextFocusDown="@id/button3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/cat_spin"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="12dp"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        tools:text="Choose Category" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_centerVertical="true"
+        android:text="Choose Siddha Unit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/e2"
+        android:layout_alignBottom="@+id/e2"
+        android:layout_alignStart="@+id/button4"
+        android:text="Convert" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginBottom="28dp"
+        android:onClick="onClick"
+        android:text="RESOURCE LIBRARY" />
+
+    <EditText
+        android:id="@+id/e2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/orgbtn"
+        android:layout_alignEnd="@+id/orgbtn"
+        android:layout_marginBottom="13dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/editText"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="12dp"
+        android:text="SIDDHA UNIT CONVERTER"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <Button
+        android:id="@+id/orgbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/button4"
+        android:onClick="onClick"
+        android:text="View Organizations" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button3"
+        android:layout_below="@+id/unit_spin"
+        android:layout_marginTop="37dp"
+        android:text="CHOOSE ISI UNIT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Spinner
+        android:id="@+id/isi_spinner"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/unit_spin"
+        android:layout_alignTop="@+id/textView19" />
+
+</RelativeLayout>

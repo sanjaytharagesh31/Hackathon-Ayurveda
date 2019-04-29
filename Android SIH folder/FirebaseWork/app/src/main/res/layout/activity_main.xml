@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="ericjoseph.com.firebasework.MainActivity">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button4"
+        android:layout_alignStart="@+id/textView17"
+        android:layout_marginBottom="12dp"
+        android:text="Convert" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button3"
+        android:layout_marginBottom="26dp"
+        android:onClick="onClick"
+        android:text="RESOURCE LIBRARY" />
+
+    <EditText
+        android:id="@+id/e2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_toEndOf="@+id/button4"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="AYURVEDIC UNIT CONVERTER"
+        android:textAppearance="@android:style/TextAppearance.Material.Headline" />
+
+    <Button
+        android:id="@+id/orgbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignBottom="@+id/button4"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/button4"
+        android:onClick="onClick"
+        android:text="View Organizations" />
+
+    <EditText
+        android:id="@+id/e1"
+        android:layout_width="170dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/aut_spinner"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView23"
+        android:layout_below="@+id/textView23"
+        android:layout_marginTop="34dp"
+        android:text="SELECT AUTHOR"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Spinner
+        android:id="@+id/aut_spinner"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/dim_spin"
+        android:layout_alignTop="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView16"
+        android:layout_below="@+id/textView16"
+        android:layout_marginTop="43dp"
+        android:text="SELECT DIMENSION"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Spinner
+        android:id="@+id/dim_spin"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/aunit_spin"
+        android:layout_alignTop="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView17"
+        android:layout_alignTop="@+id/aunit_spin"
+        android:text="SELECT AYURVEDA UNIT "
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Spinner
+        android:id="@+id/aunit_spin"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/iunit_spin"
+        android:layout_centerVertical="true" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView20"
+        android:layout_below="@+id/aunit_spin"
+        android:layout_marginTop="42dp"
+        android:text="SELECT UNIT TO CONVERT"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+    <Spinner
+        android:id="@+id/iunit_spin"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/orgbtn"
+        android:layout_alignTop="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_alignTop="@+id/e1"
+        android:text="Enter Value"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+</RelativeLayout>

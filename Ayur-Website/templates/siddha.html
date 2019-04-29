@@ -1,0 +1,434 @@
+<html>
+	<head>
+			<div id="google_translate_element"></div><script type="text/javascript">
+				function googleTranslateElementInit() {
+				  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+				}
+				</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+						
+		<title>Siddha | Conversion</title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald:600" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:500" rel="stylesheet">
+		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}"/>
+		<style>
+			body {
+				padding: 0%;
+				margin: 0%;
+				background-image: url("{{url_for('static', filename='boiii.jpg')}}");
+				background-size: cover;
+			}
+			
+			.nav ul {
+				list-style: none;
+				background-color: #BF360C	;
+				text-align: center;
+				padding: 0;
+				margin: 0;
+			}
+			.nav li {
+				font-family: 'Raleway', sans-serif;
+				font-size: 1.2em;
+				line-height: 40px;
+				height: 40px;
+				border-bottom: 1px solid #888;
+			}
+ 
+			.nav a {
+				text-decoration: none;
+				color: #fff;
+				display: block;
+				transition: .3s background-color;
+			}
+ 
+			.nav a:hover {
+				background-color: #424242;
+			}
+
+			.nav li {
+				width: 120px;
+				border-bottom: none;
+				height: 50px;
+				line-height: 50px;
+				font-size: 1.4em;
+			}
+
+			/* Option 1 - Display Inline */
+			.nav li {
+				display: inline-block;
+				margin-right: -4px;
+			}
+
+			/* Options 2 - Float
+			.nav li {
+			float: left;
+			}
+			.nav ul {
+			overflow: auto;
+			width: 600px;
+			margin: 0 auto;
+			}
+			.nav {
+			background-color: #444;
+			}
+			*/
+
+			.sidenav {
+				height: 100%;
+				width: 18%;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: #37474F;
+				overflow-x: hidden;
+				padding-top: 60px;
+			}
+
+			.sidenav a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #E0E0E0;
+				display: block;
+			}
+
+			.sidenav a:hover {
+				color: #000000;
+			}
+
+			.sidenav {
+				position: absolute;
+				top: 0;
+				right: 25px;
+				font-size: 36px;
+			}
+
+			@media screen and (max-height: 450px) {
+			.sidenav {padding-top: 15px;}
+			.sidenav a {font-size: 18px;}
+			}
+
+			h1 {
+				text-align: center;
+				color: #FFFFFF;
+				font-family: 'Oswald', sans-serif;
+				font-size: 48px;
+				font-weight: 700;
+			}
+
+			.main {
+				margin: 0 auto;
+				width: 100%;
+				max-width: 600px;
+				text-align: center;
+				box-sizing: border-box;
+			}
+
+			.main input {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 1em;
+				width: 100%;
+				text-align: center;
+				margin-top: 10px;
+				height: 40px;
+				box-sizing: border-box;
+			}
+
+			.main span {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				width: 100%;
+			}
+
+			.main span select {
+				background-color: #263648;
+				color: #fff;
+				font-size: inherit;
+				padding: 10px;
+				width: 100%;
+				border: 0;
+				margin: 0;
+				border-radius: 0px;
+				text-indent: 0.01px;
+				text-overflow: '';
+				-webkit-appearance: none; /* hide default arrow in chrome OSX */
+			}
+
+			.main span::before,
+			.main span::after {
+				content: "";
+				position: absolute;
+				pointer-events: none;
+			}
+
+			.main span::after { /*  Custom dropdown arrow */
+				content: "\25BC";
+				height: 1em;
+				font-size: .625em;
+				line-height: 1;
+				right: 1.5em;
+				top: 50%;
+				margin-top: -.5em;
+				color: #131B24;
+			}
+
+			.main span::before { /*  Custom dropdown arrow cover */
+				width: 2.5em;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				border-radius: 0;
+				background-color: #202E3C;
+			}
+
+			.from, .to {
+				margin-top: 10px;
+				box-sizing: border-box;
+				width: 30%;
+			}
+
+			.from {
+				float: left;
+				padding-right: 10px;
+			}
+
+			.to {
+				float: right;
+				padding-left: 10px;
+			}
+
+			#google_translate_element{
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				padding-right: 1%;
+				padding-bottom: 1%;
+			}
+		
+		</style>
+
+	</head>
+	<body onload="loadFirst()">
+		<header>
+				<div class="nav">
+					<ul>
+					<li class="ayurveda"><a href="{{url_for('master')}}">Ayurveda</a></li>
+					<li class="unani"><a href="{{url_for('unani')}}">Unani</a></li>
+					<li class="siddha"><a href="{{url_for('siddha')}}">Siddha</a></li>
+					</ul>
+				</div>
+			</header>
+			<div id="mySidenav" class="sidenav">
+				<a href="{{url_for('master')}}">Home</a>
+				<a href="https://siddharthsham.github.io/doggowalk/" target="_blank">Blog</a>
+				<a href="{{url_for('videos')}}" target="_blank">Videos</a>
+				<a href="https://www.google.com/maps/search/?api=1&query=ayurvedic+hospitals+near+me" target="_blank">Hospital Locator</a>
+				<a href="https://www.t.me/exalt_bot" target="_blank">Chat-Bot</a>
+				<a href="https://drive.google.com/file/d/11-qPo-VUHsop5xmdHFcfk2hqR6PiCKOt/view?usp=sharing" target="_blank">Android-App</a>
+			</div>
+		<h1>SIDDHA UNIT<br>CONVERTER</h1>
+		<div class="main">
+			<div class="selectCategory">
+				<!--Enter Category:-->
+				<span>
+					<select onchange="placeInput(); placeOutput()" id="five">
+					</select>
+				</span>
+			</div>
+			<div class="from">
+				<input type="text" placeholder="Enter a number" onkeyup="show()" id="one" />
+				<!--Unit:-->
+				<span>
+					<select id="three" onchange="show()"> </select>
+				</span>      
+			</div>
+
+			<div class="to">
+				<input type="text" id="two" placeholder="Result...">
+				<!--Covert:-->
+				<span>
+					<select onchange="show()" id="four"> </select> 
+				</span>
+			</div>
+
+		</div>
+	</body>
+</html>
+
+<script>
+	var v= document.getElementById("five");
+	var w= document.getElementById("one");
+	var x= document.getElementById("two");
+	var y= document.getElementById("three");
+	var z= document.getElementById("four");
+	
+	var factor = new Array();
+	/*
+		0 -> weight factor to convert into grams
+		1 -> vOLUME factor to cinvert into Ml
+	*/
+	factor[0] = new Array(65, 32.5, 130, 260, 780, 488, 4160, 5120, 41600, 10400, 35000, 280000, 1400000, 1750000, 3500000);
+	factor[1] = new Array(0.093, 33.6, 168, 336, 672, 1340, 5370, 10700, 16100, 21500, 64500, 4, 700, 1.33, 4, 1.6, 30, 240);
+	factor[2] = new Array(1, 1440, 5400, 10800, 1296000, 2592000, 3888000, 5255712, 157768000)
+	function placeInput() {
+		if (v.value=="weight") {
+			y.innerHTML="<option value=\"1\">Uluntu</option><option value=\"2\">Yavam</option><option value=\"3\">Kunri</option><option value=\"4\">Mancadi</option><option value=\"5\">Masam</option><option value=\"6\">Pana Edai</option><option value=\"7\">Varakan Edai</option><option value=\"8\">Kazancu</option><option value=\"9\">Palam</option><option value=\"10\">Kahcu</option><option value=\"11\">Tola</option><option value=\"12\">Cer</option><option value=\"13\">Vicai</option><option value=\"14\">Tukku</option><option value=\"15\">Tulam</option>"
+			
+			
+		}
+		if (v.value=="volume") {
+			y.innerHTML="<option value=\"1\">Nel</option><option value=\"2\">Codu</option><option value=\"3\">Azakku</option><option value=\"4\">Uzakku</option><option value=\"5\">Uri</option><option value=\"6\">Nazi/Padi</option><option value=\"7\">Kurumu/marakk</option><option value=\"8\">Patakku</option><option value=\"9\">Mukkuruni</option><option value=\"10\">Tuni</option><option value=\"11\">Kalam</option><option value=\"12\">Tekkarandi</option><option value=\"13\">Kuppikarandi</option><option value=\"14\">Tirttakkarandi</option><option value=\"15\">Ney Karandi</option><option value=\"16\">Uccikkarandi</option><option value=\"17\">Paladai</option><option value=\"18\">Ennevkarandi</option>"
+			
+			
+		}
+		if (v.value=="time") {
+			y.innerHTML="<option value=\"1\">Nodi</option><option value=\"2\">Nazikai</option><option value=\"3\">Mukurttam</option><option value=\"4\">Yamam</option><option value=\"5\">Paksam</option><option value=\"6\">Matam</option><option value=\"7\">Mandalam</option><option value=\"8\">Kalam</option><option value=\"9\">Ayanam</option>>"
+			/* 
+				1 Ahoratra of Devas = 1 year
+			   	1 Ahoratra of Pitaras = 1 month 
+			*/	 
+		}
+		w.value = ""; //to empty the input box
+	}
+	
+	function placeOutput() {
+		if (v.value=="weight") {
+			z.innerHTML="<option value=\"1\">Milligram</option><option value=\"2\">Grams</option><option value=\"3\">Kilograms</option><option value=\"4\">Uluntu</option><option value=\"5\">Yavam</option><option value=\"6\">Kunri</option><option value=\"7\">Mancadi</option><option value=\"8\">Masam</option><option value=\"9\">Pana Edai</option><option value=\"10\">Varakan Edai</option><option value=\"11\">Kazancu</option><option value=\"12\">Palam</option><option value=\"13\">Kahcu</option><option value=\"14\">Tola</option><option value=\"15\">Cer</option><option value=\"16\">Vicai</option><option value=\"17\">Tukku</option><option value=\"18\">Tulam</option>"
+		}
+		if (v.value=="volume") {
+			z.innerHTML="<option value=\"1\">Millilitre</option><option value=\"2\">Litre</option><option value=\"3\">Nel</option><option value=\"4\">Codu</option><option value=\"5\">Azakku</option><option value=\"6\">Uzakku</option><option value=\"7\">Uri</option><option value=\"8\">Nazi/Padi</option><option value=\"9\">Kurumu/marakk</option><option value=\"10\">Patakku</option><option value=\"11\">Mukkuruni</option><option value=\"12\">Tuni</option><option value=\"13\">Kalam</option><option value=\"14\">Tekkarandi</option><option value=\"15\">Kuppikarandi</option><option value=\"16\">Tirttakkarandi</option><option value=\"17\">Ney Karandi</option><option value=\"18\">Uccikkarandi</option><option value=\"19\">Paladai</option><option value=\"20\">Ennevkarandi</option>"
+		}
+		if(v.value=="time") {
+		    z.innerHTML="<option value=\"1\">Seconds</option><option value=\"2\">Minutes</option><option value=\"3\">Hours</option><option value=\"4\">Days</option><option value=\"5\">Months</option><option value=\"6\">Years</option><option value=\"7\">Nodi</option><option value=\"8\">Nazikai</option><option value=\"9\">Mukurttam</option><option value=\"10\">Yamam</option><option value=\"11\">Paksam</option><option value=\"12\">Matam</option><option value=\"13\">Mandalam</option><option value=\"14\">Kalam</option><option value=\"15\">Ayanam</option>>"
+		}
+		x.value = ""; //to empty the output box
+	}
+	
+	function show() {
+		if (v.value=="weight") {
+			if (z.value=="1")
+				x.value = w.value*factor[0][(y.value)-1];
+			if (z.value=="2")	
+				x.value = w.value*factor[0][(y.value)-1]/1000; //convert to g
+            if (z.value=="3")	
+				x.value = w.value*factor[0][(y.value)-1]/1000000; //convert to kg
+            if (z.value=="4")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="5")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="6")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="7")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="8")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="9")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="10")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="11")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+		    if (z.value=="12")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="13")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="14")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            if (z.value=="15")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+                if (z.value=="16")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+                if (z.value=="17")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+                if (z.value=="18")	
+				x.value = w.value*factor[0][(y.value)-1]/(factor[0][(z.value)-4]);
+            
+        }
+		if (v.value=="volume") {
+			if (z.value=="1")
+				x.value = w.value*factor[1][(y.value)-1];
+			if (z.value=="2")
+				x.value = w.value*factor[1][(y.value)-1]/1000;   //convert to 
+            if (z.value=="3")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="4")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="5")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="6")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="7")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="8")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="9")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="10")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="11")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="12")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="13")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="14")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="15")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="16")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="17")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="18")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="19")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+                if (z.value=="20")	
+				x.value = w.value*factor[1][(y.value)-1]/(factor[1][(z.value)-3]);
+		}
+		
+		if (v.value=="time") {
+			if (z.value=="1")
+				x.value = w.value*factor[2][(y.value)-1];
+			if (z.value=="2")
+				x.value = w.value*factor[2][(y.value)-1]/60;
+			if (z.value=="3")
+				x.value = w.value*factor[2][(y.value)-1]/3600;
+			if (z.value=="4")
+				x.value = w.value*factor[2][(y.value)-1]/86400;
+			if (z.value=="5")
+				x.value = w.value*factor[2][(y.value)-1]/2592000;
+			if (z.value=="6")
+				x.value = w.value*factor[2][(y.value)-1]/31104000;
+            if (z.value=="7")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="8")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="9")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="10")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="11")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="12")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="13")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="14")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+            if (z.value=="15")
+				x.value = w.value*factor[2][(y.value)-1]/(factor[2][(z.value)-7]);
+                
+		}
+	}
+
+	function loadFirst() {
+		v.innerHTML = "<option value=\"weight\">Weight</option><option value=\"volume\">Volume</option><option value=\"time\">Time</option>";
+		y.innerHTML = "<option value=\"1\">Uluntu</option><option value=\"2\">Yavam</option><option value=\"3\">Kunri</option><option value=\"4\">Mancadi</option><option value=\"5\">Masam</option><option value=\"6\">Pana Edai</option><option value=\"7\">Varakan Edai</option><option value=\"8\">Kazancu</option><option value=\"9\">Palam</option><option value=\"10\">Kahcu</option><option value=\"11\">Tola</option><option value=\"12\">Cer</option><option value=\"13\">Vicai</option><option value=\"14\">Tukku</option><option value=\"15\">Tulam</option>"
+		z.innerHTML = "<option value=\"1\">Milligram</option><option value=\"2\">Grams</option><option value=\"3\">Kilograms</option><option value=\"4\">Uluntu</option><option value=\"5\">Yavam</option><option value=\"6\">Kunri</option><option value=\"7\">Mancadi</option><option value=\"8\">Masam</option><option value=\"9\">Pana Edai</option><option value=\"10\">Varakan Edai</option><option value=\"11\">Kazancu</option><option value=\"12\">Palam</option><option value=\"13\">Kahcu</option><option value=\"14\">Tola</option><option value=\"15\">Cer</option><option value=\"16\">Vicai</option><option value=\"17\">Tukku</option><option value=\"18\">Tulam</option>";
+		w.value = "";
+		x.value = "";
+	}
+	
+</script>

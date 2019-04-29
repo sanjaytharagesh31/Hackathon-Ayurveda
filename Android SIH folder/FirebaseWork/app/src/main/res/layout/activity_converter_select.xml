@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="ericjoseph.com.firebasework.ConverterSelect">
+
+    <ImageView
+        android:id="@+id/Ayurselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/textView12"
+        android:layout_below="@+id/textView11"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="14dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClick"
+        app:srcCompat="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/unaniselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/Ayurselect"
+        android:layout_below="@+id/textView12"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="onClick"
+        app:srcCompat="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="CONVERTER MENU"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_below="@+id/Ayurselect"
+        android:layout_marginTop="11dp"
+        android:text="Ayurvedic Unit Converter"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView14"
+        android:layout_below="@+id/unaniselect"
+        android:layout_marginTop="14dp"
+        android:text="Unani Unit Converter"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <ImageView
+        android:id="@+id/siddhaselect"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/unaniselect"
+        android:layout_below="@+id/textView13"
+        android:layout_marginTop="15dp"
+        android:onClick="onClick"
+        app:srcCompat="@android:color/holo_orange_dark" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_below="@+id/siddhaselect"
+        android:layout_marginTop="12dp"
+        android:text="Siddha Unit Converter"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+</RelativeLayout>
