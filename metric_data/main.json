@@ -1,0 +1,101 @@
+{
+    "ayurveda": {
+        "charaka": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+
+            }
+        },
+        "sushruta": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+                
+            }
+        },
+        "sharangadhara": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+                
+            }
+        },
+        "rrs": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+                
+            }
+        },
+        "vaidyaka paribhasha pradeepa": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+                
+            }
+        },
+        "api": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+                
+            }
+        }
+    },
+    "siddha": {
+        "api": {
+            "weight": {
+
+            },
+            "time": {
+
+            },
+            "length": {
+
+            },
+            "volume": {
+                "normal": {
+
+                },
+                "domestic": {
+                    
+                }
+            }
+        }
+    },
+    "unani": {
+        "api": {
+            "weight": {
+
+            },
+            "volume": {
+
+            }
+        }
+    }
+}
