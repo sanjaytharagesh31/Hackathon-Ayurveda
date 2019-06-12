@@ -91,10 +91,22 @@
     "unani": {
         "api": {
             "weight": {
-
+                "grain": 0.01558,
+                "chawal": 0.01558,
+                "jo": 0.06332,
+                "ratti": 0.125,
+                "surkha": 0.125,
+                "danga": 0.500,
+                "masha": 0.970,
+                "miskala": 4.5,
+                "tola": 11.664,
+                "rupya": 57.326,
+                "aaqya": 350,
+                "ratala": 468.5,
+                "sera": 937
             },
             "volume": {
-
+                "tola": 12
             }
         }
     }
