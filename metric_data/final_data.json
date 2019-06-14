@@ -97,7 +97,9 @@
                 "goni": 49152,
                 "bhara": 49152,
                 "khari": 49152,
-                "vaha": 786432
+                "vaha": 786432,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
 
@@ -203,7 +205,9 @@
                 "goni": 0,
                 "bhara": 96000,
                 "khari": 0,
-                "vaha": 0
+                "vaha": 0,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
                 "ksanas": 0,
@@ -221,7 +225,8 @@
                 "samvatsara": 31104000,
                 "yuga": 155520000,
                 "ahoratra deva": 0,
-                "ahoratra pitra": 0
+                "ahoratra pitra": 0,
+                "second": 1
             },
             "length": {
                 
@@ -324,7 +329,9 @@
                 "goni": 49152,
                 "bhara": 96000,
                 "khari": 190608,
-                "vaha": 0
+                "vaha": 0,
+                "gram": 1,
+                "kilogram": 1000
 
             },
             "time": {
@@ -431,7 +438,9 @@
                 "goni": 0,
                 "bhara": 0,
                 "khari": 0,
-                "vaha": 0
+                "vaha": 0,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
 
@@ -537,7 +546,9 @@
                 "goni": 49152,
                 "bhara": 96000,
                 "khari": 196608,
-                "vaha": 0
+                "vaha": 0,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
 
@@ -643,7 +654,9 @@
                 "goni": 0,
                 "bhara": 96000,
                 "khari": 196608,
-                "vaha": 0
+                "vaha": 0,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
                 "ksanas": 0,
@@ -661,7 +674,8 @@
                 "samvatsara": 31104000,
                 "yuga": 155520000,
                 "ahoratra deva": 31104000,
-                "ahoratra pitra": 2592000
+                "ahoratra pitra": 2592000,
+                "second": 1
             },
             "length": {
                 "yavodara": 0.24,
@@ -671,7 +685,10 @@
                 "hasta": 45.72,
                 "nripa hasta": 55.88,
                 "rajhasta": 55.88,
-                "vyama": 182.88
+                "vyama": 182.88,
+                "metre": 100,
+                "centimetre": 1,
+                "kilometre": 100000
             }
         }
     },
@@ -695,7 +712,9 @@
                 "cer": 280,
                 "vicai": 1400,
                 "tukku": 1750,
-                "tulam": 3500
+                "tulam": 3500,
+                "gram": 1,
+                "kilogram": 1000
             },
             "time": {
                 "nodi": 1,
@@ -706,13 +725,17 @@
                 "matam": 2592000,
                 "mandalam": 3888000,
                 "kalam": 5259492,
-                "ayanam": 15778476
+                "ayanam": 15778476,
+                "second": 1
             },
             "length": {
                 "virarkadai": 1.95,
                 "can": 22.86,
                 "muzam": 45.72,
-                "pakam": 182.88
+                "pakam": 182.88,
+                "metre": 100,
+                "centimetre": 1,
+                "kilometre": 100000
             },
             "volume": {
                 "normal": {
@@ -728,7 +751,9 @@
                     "patakku": 10700,
                     "mukkuruni": 16100,
                     "tuni": 21500,
-                    "kalam": 64500
+                    "kalam": 64500,
+                    "millilitre": 1,
+                    "litre": 1000
                 },
                 "domestic": {
                     "tekkarandi": 3.697,
@@ -737,7 +762,9 @@
                     "ney karanda": 4.0,
                     "uccikkarandi": 1.6,
                     "paladai": 30,
-                    "enneykkarandi": 240
+                    "enneykkarandi": 240,
+                    "millilitre": 1,
+                    "litre": 1000
                 }
             }
         }
@@ -757,7 +784,9 @@
                 "rupya": 57.326,
                 "aaqya": 350,
                 "ratala": 468.5,
-                "sera": 937
+                "sera": 937,
+                "gram": 1,
+                "kilogram": 1000
             },
             "volume": {
                 "tola": 12
