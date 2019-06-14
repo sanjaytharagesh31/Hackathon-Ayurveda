@@ -226,7 +226,12 @@
                 "yuga": 155520000,
                 "ahoratra deva": 0,
                 "ahoratra pitra": 0,
-                "second": 1
+                "second": 1,
+                "minute": 60,
+                "hour": 3600,
+                "day": 86400,
+                "month": 2592000,
+                "year": 15552000
             },
             "length": {
                 
@@ -675,7 +680,12 @@
                 "yuga": 155520000,
                 "ahoratra deva": 31104000,
                 "ahoratra pitra": 2592000,
-                "second": 1
+                "second": 1,
+                "minute": 60,
+                "hour": 3600,
+                "day": 86400,
+                "month": 2592000,
+                "year": 15552000
             },
             "length": {
                 "yavodara": 0.24,
@@ -688,7 +698,8 @@
                 "vyama": 182.88,
                 "metre": 100,
                 "centimetre": 1,
-                "kilometre": 100000
+                "kilometre": 100000,
+                "inch": 2.54
             }
         }
     },
@@ -726,7 +737,12 @@
                 "mandalam": 3888000,
                 "kalam": 5259492,
                 "ayanam": 15778476,
-                "second": 1
+                "second": 1,
+                "minute": 60,
+                "hour": 3600,
+                "day": 86400,
+                "month": 2592000,
+                "year": 15552000
             },
             "length": {
                 "virarkadai": 1.95,
@@ -735,7 +751,8 @@
                 "pakam": 182.88,
                 "metre": 100,
                 "centimetre": 1,
-                "kilometre": 100000
+                "kilometre": 100000,
+                "inch": 2.54
             },
             "volume": {
                 "normal": {
@@ -789,7 +806,9 @@
                 "kilogram": 1000
             },
             "volume": {
-                "tola": 12
+                "tola": 12,
+                "millilitre": 1,
+                "litre": 1000
             }
         }
     }
