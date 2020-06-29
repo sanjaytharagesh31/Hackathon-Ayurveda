@@ -1,0 +1,18 @@
+{
+    "weight": {
+        "from_unit": "gram",
+        "to_unit": "kilogram"
+    },
+    "time": {
+        "from_unit": "second",
+        "to_unit": "minute"
+    },
+    "length": {
+        "from_unit": "centimetre",
+        "to_unit": "metre"
+    },
+    "volume": {
+        "from_unit": "millilitre",
+        "to_unit": "litre"
+    }
+}
