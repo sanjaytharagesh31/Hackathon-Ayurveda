@@ -3,6 +3,7 @@ from termcolor import colored
 import json
 import re
 import jellyfish
+import sys
 
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
@@ -910,9 +911,12 @@ def help_rules():
     print("\texit        - To exit from application\n\n",)
     print('To select autocomplete, enter right-> arrow')
     print("Refer the examples given")
-    print("\tset ayurveda")
-    print("\tset charaka")
-    print("\tfrom ratti")
+    print("\tset ayurveda   - Ayurveda system is set")
+    print("\tset weight     - Weight metric is set")
+    print("\tset charaka    - Charaka author is set")
+    print("\tfrom kilogram  - Kilogram is set as FROM unit")
+    print("\tto gram        - Gram is set as TO unit")
+    print("\t56             - 56 kilogram is converted to grams (based on above parameters)")
     print("Enter a number to convert values\n\n")
 
 def print_beauty(l):
@@ -1087,7 +1091,7 @@ def main_loop():
                 continue
             
             if(unitfrom_value == 0):
-                print('I believe', author, ' has not defined', pre_from_unit, 'unit in his metrics. Refer the website (https://siddharthsham.github.io/ayush) for referecnce\n')
+                print('I believe', author, 'has not defined', pre_from_unit, 'unit in his metrics. Refer the website (https://siddharthsham.github.io/ayush) for referecnce\n')
                 continue
             elif(unitto_value == 0):
                 print('I believe', author, 'has not defined', pre_to_unit, 'unit in his metrics. Refer the website (https://siddharthsham.github.io/ayush) for referecnce\n')
@@ -1097,7 +1101,7 @@ def main_loop():
         
         elif(code == 'exit'):
             print("Bye, ^--^")
-            exit()
+            sys.exit()
         
         else:
             try:
