@@ -1081,20 +1081,20 @@ def main_loop():
             try:
                 unitfrom_value = data_field[system][author][metric][pre_from_unit]
             except:
-                print('Oops! I couldn\'t find', pre_from_unit, 'in', system, author, metric, '. Can you try checking the website (https://siddharthsham.github.io/ayush) for reference\n')
+                print('Oops! I couldn\'t find', pre_from_unit, 'in', system, author, metric, '.\n')
                 continue
 
             try:
                 unitto_value = data_field[system][author][metric][pre_to_unit]
             except:
-                print('Oops! I couldn\'t find', pre_to_unit, 'in', system, author, metric, '. Can you try checking the website (https://siddharthsham.github.io/ayush) for reference\n')
+                print('Oops! I couldn\'t find', pre_to_unit, 'in', system, author, metric, '.\n')
                 continue
             
             if(unitfrom_value == 0):
-                print('I believe', author, 'has not defined', pre_from_unit, 'unit in his metrics. Refer the website (https://siddharthsham.github.io/ayush) for referecnce\n')
+                print('I believe', author, 'has not defined', pre_from_unit, 'unit in his metrics.\n')
                 continue
             elif(unitto_value == 0):
-                print('I believe', author, 'has not defined', pre_to_unit, 'unit in his metrics. Refer the website (https://siddharthsham.github.io/ayush) for referecnce\n')
+                print('I believe', author, 'has not defined', pre_to_unit, 'unit in his metrics.\n')
                 continue
             else:
                 print(convert())
@@ -1113,4 +1113,3 @@ def main_loop():
 
 if __name__ == "__main__":
     main_loop()
-    
